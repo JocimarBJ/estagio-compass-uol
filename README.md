@@ -5,11 +5,14 @@
 ## 👤 Sobre Mim
 Olá, me chamo Jocimar, tenho 20 anos, nasci em São José do Rio Preto/SP, mas atualmente moro e estudo em Cornélio Procópio/Paraná.
 
-||
-|-|
-|eeeeeee|
+<div align="center">
+   
+| <img src="https://github.com/user-attachments/assets/9bf1c5bb-0bd9-49eb-b7c7-16d67760dcd1" width="500" height="650"/> |
+|:---------------------------------------------:|
+   
+</div>
 
-### Algumas informações técnicas sobre mim:
+#### Algumas informações técnicas sobre mim:
 - Discente de Engenharia de Software na UTFPR, 6° Semestre;
 - Autor do Livro [O Livro dos Ratos Pensantes](inteligentehub.com.br/book.html);
 - Trabalhei na Empresa Júnior [Unect Jr.](www.instagram.com/unectjr/);
@@ -19,7 +22,7 @@ Olá, me chamo Jocimar, tenho 20 anos, nasci em São José do Rio Preto/SP, mas 
 - Inglês Intermediário (3/5 semestres) - Atualmente Nível B1 - CALEM/UTFPR;
 - Capacitações de Marketing e Design.
 
-### Hobbies e Gostos:
+#### Hobbies e Gostos:
 - Gosto de ler sobre psicologia/psicanálise, fantasia e história;
 - Gosto de jogar no PC desde os 5 anos;
 - Gosto de estudar coisas novas;
