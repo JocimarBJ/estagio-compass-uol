@@ -1,0 +1,1 @@
+- Não houve qualquer desafio relacionado ao conteúdo do curso [Git e Github](https://compassuol.udemy.com/course/aprenda-git-e-github/learn/lecture/38257634#overview).
