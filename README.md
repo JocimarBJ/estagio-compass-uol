@@ -34,3 +34,4 @@ Olá, me chamo Jocimar, tenho 20 anos, nasci em São José do Rio Preto/SP, mas 
 ## 🔄 Sprints
 
 - [x] [Sprint 1](./Sprint%201/README.md)
+- [x] [Sprint 2](./Sprint%202/README.md)
