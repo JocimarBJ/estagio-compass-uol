@@ -5,7 +5,6 @@
 |<h3 align="center">🔍ÍNDICE</h3>|
 |-|
 | [SQL para Análise de Dados](#-sql-para-análise-de-dados) |
-| [PB AWS 2/10](#pb---aws-210) |
 | [Exercícios](#exercícios) |
 | [Evidências](#evidências) |
 | [Demais Pastas](#demais-pastas)|
@@ -297,11 +296,11 @@ No projeto 2 exemplar utilizamos dos mesmos conhecimentos para resolver o proble
    </details>
 
 5. <details>
-
-    > Também teria o mesmo resultado utilizando o INNER JOIN/JOIN
    <summary>
      <a href="./Exercicios/Caso-biblioteca/exercicio5.sql">Resposta Ex5</a>
    </summary>
+
+   > Também teria o mesmo resultado utilizando o INNER JOIN/JOIN
     
     ```SQL
     SELECT DISTINCT
