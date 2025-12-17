@@ -1,5 +1,18 @@
 # 📝 Resumo
 
+<div align="center">
+ 
+|<h3 align="center">🔍ÍNDICE</h3>|
+|-|
+| [SQL para Análise de Dados](#-sql-para-análise-de-dados) |
+| [PB AWS 2/10](#pb---aws-210) |
+| [Exercícios](#exercícios) |
+| [Evidências](#evidências) |
+| [Demais Pastas](#demais-pastas)|
+
+</div>
+
+
 ## 📊 SQL Para Análise de Dados
 ### 🔧Configuração do ambiente de trabalho
 Como meu pgAdmin já estava instalado na minha máquina, eu somente fiz a revisão do que foi passado para ver se não havia ausência de algum fator fundamental para a execução dos futuros exercícios;
@@ -8,7 +21,7 @@ A maioria dos comandos, como Select, Where, Order By eu já conhecia, no entanto
 - Podemos utilizar o asterísco `*` quando desejamos printar todas as colunas da tabela e seus dados.
 - **SELECT** usamos frequentemente na linguagem SQL, serve para selecionarmos colunas de tabelas e mostrar os dados filtrados. 
   - Exemplo: `SELECT usernames FROM game.users`.
-- o **WHERE** é utilizado em conjunto com o Select e serve para filtrar as linhas da tabela de acordo com a condição que você impõe. 
+- **WHERE** é utilizado em conjunto com o Select e serve para filtrar as linhas da tabela de acordo com a condição que você impõe. 
   - Exemplo: `SELECT email, state FROM sales.customers WHERE state = 'SC'`. 
 
   Dessa forma, somente àqueles que corresponderem com a sigla SC será mostrado.
@@ -23,7 +36,6 @@ Houveram demais informações e detalhes durante as aulas, como: não utilizar v
 Temos diversos tipos de operadores, sendo eles **aritméticos, comparação e lógicos**.
 Eles servem para executarmos cálculos matemáticos, comparar valores retornando *true* ou *false* e unir expressões simples em uma composta. <br>
 São muitos, mas podemos citar alguns como, respectivamente:
-
 - ``` ||, +, -, *, /, ^, %...```
 - ``` =, <=, =>, <>, >, <...```
 - ``` AND, OR, NOT, IN, ON, LIKE, USING... ```
@@ -42,9 +54,9 @@ As funções agregadas não computam células NULL como zero, elas ignoram.
 
 ### ⚙️ Join
 Existem 4 tipos de Join para serem utilizados no SQL, sendo eles:
-- ⟗ `FULL JOIN` pega todos os dados, tanto da tabela da esquerda (tabela declarada primeiro) e tabela da direita (tabela declarada depois)
+- ⟗ `FULL JOIN` pega todos os dados, tanto da tabela da esquerda (tabela declarada primeiro) e tabela da direita (tabela declarada depois).
 - ⟕ `LEFT JOIN` pega todos os dados da tabela da esquerda, e da tabela da direita pega somente aqueles correspondentes à tabela da esquerda.
-- ⨝ `INNER JOIN` pega a intersecção de dados entre a tabela Left e a tabela Right
+- ⨝ `INNER JOIN` pega a intersecção de dados entre a tabela Left e a tabela Right.
 - ⟖ `RIGHT JOIN` pega todos os dados da tabela da direita, mesma coisa do Left Join, porém o contrário.
 
 São mais comumente utilizados o Left Join e o Inner Join. Além disso, baseando-se nesses 4 comandos de Join, podemos conseguir uma variação de até 8 jeitos diferentes de extrair os dados na consulta, como:
@@ -58,7 +70,7 @@ Existe o `UNION ALL` e o `UNION`, sendo sua principal diferença que o UNION ALL
 
 ### 🔀 Subqueries
 As Subqueries servem para que possamos consultar os dados de outras consultas que estão embutidas, ou seja, utilizar os resultados de uma query dentro de outra query.
-Existem 4 tipos de Subquery, basicamente são no: Where, With, From e Select.
+Existem 4 tipos de Subquery, basicamente são no: `WHERE, WITH, FROM e SELECT`.
 
 Alguns pontos de atenção seriam:
 - Sempre ao utilizar no WHERE, a Subquery deve retornar apenas um valor, não mais que uma linha ou coluna.
@@ -161,7 +173,7 @@ As funções servem para criarmos comandos personalizados de scripts que serão 
     DROP FUNCTION nome_da_funcao
     ```
 
-### Manipulação de Tabelas:
+### 🔣 Manipulação de Tabelas:
 - **Tabelas - Criação e Deleção:**<br>
   Existem 2 formas de criar uma tabela:
   - A partir de uma Query: Após fazer a query, utilizamos o comando `INTO` + nome_que_queremos antes do FROM. Após isso, ao invés de sempre termos que fazer uma query para obter o mesmo resultado, podemos simplesmente invocar a tabela com o nome que colocamos.
@@ -213,27 +225,229 @@ As funções servem para criarmos comandos personalizados de scripts que serão 
     RENAME COLUMN nome_da_coluna TO novo_nome
     ```
   - Para deletar uma coluna, usamos: `ALTER TABLE nome_da_tabela DROP COLUMN nome_da_coluna`
-# PB - AWS 2/10
-### Conceitos da Linguagem Python
 
-### Conceitos do Dia-a-Dia de um Data & Analytics
+### 📒 Projeto 1 - Dashboard de Acompanhamento de Vendas
+Para a criação do Dashboard, no Excel precisamos definir 3 páginas, sendo elas a janela do Dashboard que puxará os dados da janela dos Resultados e por fim uma janela para documentar as Queries.
+Durante a realização do projeto utilizamos todos os conhecimentos adquiridos ao longo do curso para formar um dashboard representativo dos dados, trazendo-os de forma mais visualmente clara.
+
+### 📒 Projeto 2 - Análise de Perfil dos Clientes
+No projeto 2 exemplar utilizamos dos mesmos conhecimentos para resolver o problema e representar como gráficos. Os gráficos, como no projeto 1, foram apresentados no Excel e foi dividido da mesma forma as suas páginas.
 
 # Exercícios
-### Python
 
-1. Durante o
-[Exercício 1 - Parte 1](./Exercicios/Exercício%2001-SELECT.txt)
+### Caso de Estudo Biblioteca
+1. <details>
+   <summary>
+    <a href="./Exercicios/Caso-biblioteca/exercicio1.sql">Resposta Ex1</a>
+   </summary>
+    
+    ```SQL
+    SELECT cod, titulo, autor, editora, valor, publicacao, edicao, idioma
+    FROM livro
+    WHERE livro.publicacao > '2014-12-31'  
+    ORDER BY livro.cod ASC
+    ```
+   </details>
 
-2. ...
-[Resposta Ex2.](./Exercicios/Exercício%2002-DISTINCT.txt)
+2. <details>
+   <summary>
+    <a href="./Exercicios/Caso-biblioteca/exercicio2.sql">Resposta Ex2</a>
+   </summary>
+    
+    ```SQL
+    SELECT titulo, valor
+    FROM livro
+    ORDER BY valor DESC
+    LIMIT 10
+    ```
+   </details>
 
-### SQL
+3. <details>
+   <summary>
+    <a href="../Exercicios/Caso-biblioteca/exercicio3.sql">Resposta Ex3</a>
+   </summary>
+    
+    ```SQL
+    SELECT count(liv.cod) as quantidade, edi.nome, en.estado, en.cidade
+    FROM livro AS liv
+    LEFT JOIN editora AS edi
+    ON edi.codEditora = liv.editora
+    LEFT JOIN endereco AS en
+    ON en.codEndereco = edi.endereco
+    GROUP BY edi.codEditora, edi.nome, en.estado, en.cidade
+    ORDER BY quantidade DESC
+    LIMIT 5
+    ```
+   </details>
+
+4. <details>
+   <summary>
+     <a href="./Exercicios/Caso-biblioteca/exercicio4.sql">Resposta Ex4</a>
+   </summary>
+    
+    ```SQL
+    SELECT
+    nome, codautor,nascimento,
+      (SELECT count(*)
+      FROM livro
+      WHERE autor = codautor) AS quantidade
+    FROM autor
+    ORDER BY REPLACE(nome, 'Á', 'A');
+    ```
+   </details>
+
+5. <details>
+
+    > Também teria o mesmo resultado utilizando o INNER JOIN/JOIN
+   <summary>
+     <a href="./Exercicios/Caso-biblioteca/exercicio5.sql">Resposta Ex5</a>
+   </summary>
+    
+    ```SQL
+    SELECT DISTINCT
+        aut.nome
+    FROM autor AS aut
+    LEFT JOIN livro AS liv
+        ON liv.autor = aut.codAutor
+    LEFT JOIN editora AS edi
+        ON edi.codEditora = liv.editora
+    LEFT JOIN endereco as en
+        ON en.codEndereco = edi.endereco
+    WHERE en.estado NOT in ('RIO GRANDE DO SUL', 'SANTA CATARINA', 'PARANÁ')
+    ORDER BY aut.nome ASC
+    ```
+   </details>
+
+6. <details>
+   <summary>
+     <a href="./Exercicios/Caso-biblioteca/exercicio6.sql">Resposta Ex6</a>
+   </summary>
+    
+    ```SQL
+    SELECT
+        aut.codautor,
+        aut.nome,
+        count(liv.cod) AS quantidade_publicacoes
+    FROM autor aut
+    JOIN livro liv
+        ON liv.autor = aut.codautor
+    GROUP BY
+        aut.codautor,
+        aut.nome
+    HAVING count(liv.cod) = (
+        SELECT MAX(qtd)
+        FROM (
+            SELECT count(*) AS qtd
+            FROM livro
+            GROUP BY autor
+        )
+    )
+    ```
+   </details>
+
+7. <details>
+   <summary>
+     <a href="./Exercicios/Caso-biblioteca/exercicio7.sql">Resposta Ex7</a>
+   </summary>
+    
+    ```SQL
+    SELECT aut.nome
+    FROM autor as aut
+    LEFT JOIN livro as liv
+        ON liv.autor = aut.codAutor
+    WHERE liv.cod IS NULL
+    ORDER BY aut.nome ASC
+    ```
+   </details>
+
+### Caso de Estudo Loja
 
 # Evidências
 
-Ao executar o código do exercício ... observei que ... conforme podemos ver na imagem a seguir:
+<details>
+<summary>Exercício 1 - Ao resolver o exercicio, foi solicitado para:
+</summary>
 
-![Evidencia 1](./Evidencias/sample.webp)
+> "Apresente a query para listar todos os livros publicados após 2014. Ordenar pela coluna cod, em ordem crescente, as linhas.  Atenção às colunas esperadas no resultado final: cod, titulo, autor, editora, valor, publicacao, edicao, idioma"
+
+Deste modo, minha lógica para chegar à resolução foi de primeiro identificar as colunas que eu iria utilizar, usando  o diagrama DER eu fiz o FROM e o SELECT. Após isso, fiz a condição de filtragem usando o WHERE onde só pega datas depois de 31/12/2014, mostrando os resultados ordenados de forma crescente pelo código do livro.<br>
+E pode-se confirmar seguindo o link da imagem abaixo.
+</details>
+
+![Evidencia 1](./Evidencias/Caso-biblioteca/exercicio1-sql.png)
+
+<details>
+<summary>Exercício 2 - Ao resolver o exercicio, foi solicitado para:
+</summary>
+
+> "Apresente a query para listar os 10 livros mais caros. Ordenar as linhas pela coluna valor, em ordem decrescente.  Atenção às colunas esperadas no resultado final:  titulo, valor."
+
+A resolução foi bem simples, para listar os mais caros utilizei um ORDER BY do valor de forma Decrescente e usei LIMIT 10 para só mostrar os 10 mais caros.<br>
+E pode-se confirmar seguindo o link da imagem abaixo.
+</details>
+
+![Evidencia 2](./Evidencias/Caso-biblioteca/exercicio2-sql.png)
+
+<details>
+<summary>Exercício 3 - Ao resolver o exercicio, foi solicitado para:
+</summary>
+
+> "Apresente a query para listar as 5 editoras com mais livros na biblioteca. O resultado deve conter apenas as colunas quantidade, nome, estado e cidade. Ordenar as linhas pela coluna que representa a quantidade de livros em ordem decrescente."
+
+Para a resolução, eu uni as tabelas Livro, Editora e Endereco usando o LEFT JOIN, limitei para 5 com LIMIT, contei todos os livros usando o COUNT( ) e ordenei de forma decrescente e por fim agrupei pelas colunas da tabela Editora e Endereco. Assim mostrando as 5 editoras com mais livros.<br>
+E pode-se confirmar seguindo o link da imagem abaixo.
+</details>
+
+![Evidencia 3](./Evidencias/Caso-biblioteca/exercicio3-sql.png)
+
+<details>
+<summary>Exercício 4 - Ao resolver o exercicio, foi solicitado para:
+</summary>
+
+> "Apresente a query para listar a quantidade de livros publicada por cada autor. Ordenar as linhas pela coluna nome (autor), em ordem crescente. Além desta, apresentar as colunas codautor, nascimento e quantidade (total de livros de sua autoria). Utilize replace."
+
+Para a resolução, fiz a contagem de livro que cada autor tinha utilizando uma subquery no select, onde usei a função COUNT( ), nomeando essa subquery como "quantidade". Apresentei as colunas desejadas e por fim ordenei de forma crescente (por padrão o ASC é opcional), com o complemento do REPLACE( ) para retirar os acentos agudos na letra A das strings.<br>
+E pode-se confirmar seguindo o link da imagem abaixo.
+</details>
+
+![Evidencia 4](./Evidencias/Caso-biblioteca/exercicio4-sql.png)
+
+<details>
+<summary>Exercício 5 - Ao resolver o exercicio, foi solicitado para:
+</summary>
+
+> "Apresente a query para listar o nome dos autores que publicaram livros através de editoras NÃO situadas na região sul do Brasil. Ordene o resultado pela coluna nome, em ordem crescente. Não podem haver nomes repetidos em seu retorno."
+
+Na resolução, a primeira coisa foi colocar o DISTINCT para unicidade dos dados, em seguida uni as tabelas Autor, Livro, Editora e Endereco com o JOIN. Após isso, fiz uma condição de negação lógica para que fosse mostrados todos os autores com livros em editora que não são da região sul (utilizei NOT IN), por fim, ordenei em ordem crescente pelo nome dos autores.<br>
+E pode-se confirmar seguindo o link da imagem abaixo.
+</details>
+
+![Evidencia 5](./Evidencias/Caso-biblioteca/exercicio5-sql.png)
+
+<details>
+<summary>Exercício 6 - Ao resolver o exercicio, foi solicitado para:
+</summary>
+
+> "Apresente a query para listar o autor com maior número de livros publicados. O resultado deve conter apenas as colunas codautor, nome, quantidade_publicacoes".
+
+Utilizei HAVING ao invés de WHERE para caso houvesse algum outro autor que pudesse empatar na maior quantidade de livros com outro autor. Eu fiz a conexão entre as tabelas usando o JOIN e agrupei por codigo do autor e nome, fazendo a contagem também de livros por cada autor. Utilizando o HAVING utilizei o comando `HAVING COUNT(liv.cod) = (...)` para que ele filtrasse apenas os autores que tivessem o resultado da subquery. Dentro dos parênteses que é o ponto chave, fiz uma subquery para selecionar o maior número `SELECT MAX(qtd)` da contagem de `SELECT count(*) AS qtd` da tabela livro agrupada por cada autor. Dessa forma, o Having( ) irá retornar algo como "depois de agrupar por autor,
+mantenha apenas os autores que têm exatamente o número máximo de publicações totais".<br>
+Não utilizei o WHERE, pois isso caberia utilizar o LIMIT, ao qual num empate decidiria por um dos dois e não os dois (que é o correto).<br>
+E pode-se confirmar seguindo o link da imagem abaixo.
+</details>
+
+![Evidencia 6](./Evidencias/Caso-biblioteca/exercicio6-sql.png)
+
+<details>
+<summary>Exercício 7 - Ao resolver o exercicio, foi solicitado para:
+</summary>
+
+> "Apresente a query para listar o nome dos autores com nenhuma publicação. Apresentá-los em ordem crescente"
+
+Para a resolução, uni as duas tabelas (Livro e Autor) usando o JOIN e condicionei com o WHERE para que somente aqueles autores que tivesse o código do livro como NULL fossem mostrados, ou seja, àqueles com nenhuma publicação. Utilizar o atributo `liv.publicacao` também funcionaria (neste caso), mas o recomendado é utilizar a Primary Key. Depois disso, ordenei crescentemente pelos nomes dos autores.
+</details>
+
+![Evidencia 7](./Evidencias/Caso-biblioteca/exercicio7-sql.png)
 
 ## Demais pastas:
 **Certificados**: Não houve cursos externos, apenas dentro da Compass Udemy.
