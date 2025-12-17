@@ -18,16 +18,22 @@ Como meu pgAdmin já estava instalado na minha máquina, eu somente fiz a revis�
 ### ⌨️ Comandos básicos
 A maioria dos comandos, como Select, Where, Order By eu já conhecia, no entanto pude aprender como funcionava o Limit e o Distinct.
 - Podemos utilizar o asterísco `*` quando desejamos printar todas as colunas da tabela e seus dados.
-- **SELECT** usamos frequentemente na linguagem SQL, serve para selecionarmos colunas de tabelas e mostrar os dados filtrados. 
-  - Exemplo: `SELECT usernames FROM game.users`.
-- **WHERE** é utilizado em conjunto com o Select e serve para filtrar as linhas da tabela de acordo com a condição que você impõe. 
-  - Exemplo: `SELECT email, state FROM sales.customers WHERE state = 'SC'`. 
+- `SELECT` usamos frequentemente na linguagem SQL, serve para selecionarmos colunas de tabelas e mostrar os dados filtrados.
+  <details><summary>Exemplo:</summary>
 
-  Dessa forma, somente àqueles que corresponderem com a sigla SC será mostrado.
-- **DISTINCT** serve para remover linhas duplicadas, mostrando apenas as linhas que distinguem, evitando que informações se repitam. Utilizado logo após o SELECT. 
-  - Exemplo: `SELECT DISTINCT brand FROM sales.products`.
-- **ORDER BY** serve para ordenar de acordo com a regra definida, por exemplo decrescente, crescente e etc.
-- **LIMIT** é utilizado para limitar o número de linhas da consulta. Utilizado sempre no final da linha.
+  `SELECT usernames FROM game.users`</details>
+
+- `WHERE` é utilizado em conjunto com o Select e serve para filtrar as linhas da tabela de acordo com a condição que você impõe.
+  <details><summary>Exemplo:</summary>
+  
+  `SELECT email, state FROM sales.customers WHERE state = 'SC'`.
+  Dessa forma, somente àqueles que corresponderem com a sigla SC será mostrado.</details>
+- `DISTINCT` serve para remover linhas duplicadas, mostrando apenas as linhas que distinguem, evitando que informações se repitam. Utilizado logo após o SELECT. 
+  <details><summary>Exemplo:</summary>
+  
+  `SELECT DISTINCT brand FROM sales.products`.</details>
+- `ORDER BY` serve para ordenar de acordo com a regra definida, por exemplo decrescente, crescente e etc.
+- `LIMIT` é utilizado para limitar o número de linhas da consulta. Utilizado sempre no final da linha.
 
 Houveram demais informações e detalhes durante as aulas, como: não utilizar virgula antes do FROM e etc. Algo que observei não ser retratado foi que uma boa prática para comandos SQL é utilizar eles em maiúsculo, por exemplo: `SELECT email FROM ...` ao invés de `Select Email FROM ...`, visando a organização e formatação textual, como uma melhor compreensão e praticidade para qualquer desenvolvedor que estiver lendo.
 
@@ -82,7 +88,7 @@ Alguns pontos de atenção seriam:
 - **Conversão de Unidades**: <br>
   Existem dois jeitos de conversão (type casting), uma das formas utiliza `::` e na outra a função `CAST()`, basicamente. Existem outras funções, que serão citadas mais a abaixo.
   - Para utilizar o `::`, devemos seguir o seguinte padrão `dado_da_tabela::formato_pretendido`. Exemplo: `112233::text`.
-  - Para utilizar o Cast(), devemos:
+  - Para utilizar o Cast( ), devemos:
     ```SQL
     CAST(dado_seu AS formato_pretendido)
 
@@ -92,41 +98,52 @@ Alguns pontos de atenção seriam:
 - **Tratamento Geral**:<br>
   Nesta parte utilizamos dois tipos, sendo eles CASE WHEN e COALESCE( )
   - `CASE WHEN` é usado para agrupamento de dados. No primeiro When a condição deve ser verdadeira e qual resultado esperamos caso ela seja verdadeira. A lógica é bem parecida com SWITCH CASE nas linguagens de programação. No CASE WHEN nós utilizamos os operadores lógicos e deve sempre ser finalizado com END.
-  - `COALESCE( )` é usado para tratamento de dados nulos. Dentro do COALESCE pode-se colocar uma sequência de valores separados por vírgula. Primeiro, ele verifica qual é o primeiro campo não nulo de uma lista de valores e vai retornando valor por valor que não seja nulo, todos que ele considerar nulo ele vai ignorar e trocando os valores nulos pelo primeiro não nulo dentro do parênteses. Exemplo:
-    ```SQL
-    SELECT nome,
-    COALESCE(email, telefone, 'Sem contato') AS contato
-    FROM clientes;
+  - `COALESCE( )` é usado para tratamento de dados nulos. Dentro do COALESCE pode-se colocar uma sequência de valores separados por vírgula. Primeiro, ele verifica qual é o primeiro campo não nulo de uma lista de valores e vai retornando valor por valor que não seja nulo, todos que ele considerar nulo ele vai ignorar e trocando os valores nulos pelo primeiro não nulo dentro do parênteses. 
+    <details>
+    <summary>
+    Exemplo:
+    </summary>
 
-    Se email existir → usa email
-    senão, se telefone existir → usa telefone
-    senão → 'Sem Contato'
-    ```
-    → Transformando isso:
-    |nome|email|telefone|
-    |:-:|:-:|:-:|
-    |Joao|joao@gmail.com|999-111|
-    |Ana|Null|888-222|
-    |Carlos|Null|Null|
-    
-    → Nisso:
-    |nome|contato|
-    |:-:|:-:|
-    |Joao|joao@gmail.com|
-    |Ana|888-222|
-    |Carlos|Sem Contato|
+      ```SQL
+      SELECT nome,
+      COALESCE(email, telefone, 'Sem contato') AS contato
+      FROM clientes;
 
+      Se email existir → usa email
+      senão, se telefone existir → usa telefone
+      senão → 'Sem Contato'
+      ```
+      → Transformando isso:
+      |nome|email|telefone|
+      |:-:|:-:|:-:|
+      |Joao|joao@gmail.com|999-111|
+      |Ana|Null|888-222|
+      |Carlos|Null|Null|
+      
+      → Nisso:
+      |nome|contato|
+      |:-:|:-:|
+      |Joao|joao@gmail.com|
+      |Ana|888-222|
+      |Carlos|Sem Contato|
+    </details>
 - **Tratamento de Texto**:<br>
 LOWER( ), UPPER( ), TRIM( ), REPLACE( ) são algumas das formas de tratamento de texto apresentadas.
   - `LOWER()` basicamente deixa toda a string em minúsculo
   - `UPPER()` deixa toda a string em maiúsculo
   - `TRIM()` retira os espaços em brancos das extremidades de uma string
-  - `REPLACE()` substitui a parte da string passada no parâmetro, juntamente com o que queremos colocar no lugar.<br>
-  Exemplo: 
+  - `REPLACE()` substitui a parte da string passada no parâmetro, juntamente com o que queremos colocar no lugar.
+    <details>
+    <summary>
+    Exemplo:
+    </summary>
+
       ```SQL
       REPLACE('SAO PAULO', 'SAO', 'SÃO') = 'SÃO PAULO'
       -- irá retornar TRUE
       ```
+    </details>
+<br>
 
 - **Tratamento de Datas**:<br>
 Existem 4 funções muito utilizadas para tratar datas e horas, sendo elas:
@@ -144,7 +161,11 @@ As funções servem para criarmos comandos personalizados de scripts que serão 
   - Definir um nome para ela que torne claro a sua funcionalidade e não traga ambiguidade
   - Definir quais serão as variáveis de entrada passadas por parâmetro e as variáveis de saída
 
-  - Exemplo Prático:
+  <details>
+  <summary>
+  Exemplo Prático:
+  </summary>
+
     ```SQL
     --Escopo
     select datediff('weeks', '2018-06-01', current_date)
@@ -171,10 +192,15 @@ As funções servem para criarmos comandos personalizados de scripts que serão 
     --Deletar Função
     DROP FUNCTION nome_da_funcao
     ```
+  </details>
 
 ### 🔣 Manipulação de Tabelas:
-- **Tabelas - Criação e Deleção:**<br>
+- **Tabelas - Criação e Deleção:**
+  <details>
+  <summary>
   Existem 2 formas de criar uma tabela:
+  </summary>
+
   - A partir de uma Query: Após fazer a query, utilizamos o comando `INTO` + nome_que_queremos antes do FROM. Após isso, ao invés de sempre termos que fazer uma query para obter o mesmo resultado, podemos simplesmente invocar a tabela com o nome que colocamos.
   - A partir do Zero: Usamos o comando `CREATE TABLE nome_que_queremos(variavel1 tipo 1, variavel2 tipo2,...)`. No entanto, a tabela estará vazia, então para preenchê-la usamos:
     ```SQL
@@ -183,37 +209,72 @@ As funções servem para criarmos comandos personalizados de scripts que serão 
     ```
   - Para excluir a tabela usamos `DROP TABLE nome_que_usamos`
 
-- **Linhas - Inserção, Atualização e Deleção:**<br>
-  - Para inserir linhas, a sintaxe é parecida, utilizamos:
+<br>
+
+- **Linhas - Inserção, Atualização e Deleção:**
+  <details>
+  <summary>
+  Para inserir linhas, a sintaxe é parecida, utilizamos:
+  </summary>
+
     ```SQL
     INSERT INTO nome_da_tabela(parametro1, parametro2) VALUES (valor1, valor1_modificado...)
     ```
-  - Para atualizar alguma informação de uma linha, usamos:
+  </details>
+
+  <details>
+  <summary>
+  Para atualizar alguma informação de uma linha, usamos:
+  </summary>
+
     ```SQL
     UPDATE nome_da_tabela
     SET coluna = dado_modificado 
     WHERE coluna2 = dado_correspondente
     ```
-  - Para deletar, usamos:
+  </details>
+
+  <details>
+  <summary>
+  Para deletar, usamos:
+  </summary>
+
     ```SQL
     DELETE FROM nome_da_tabela
     WHERE coluna1 = dado_correspondente
     ```
-    
+  </details>
+<br>
+
 - **Colunas - Inserção, Atualização e Deleção:**<br>
-  - Para inserirmos colunas em uma tabela, usamos:
+  <details>
+  <summary>
+  Para inserirmos colunas em uma tabela, usamos:
+  </summary>
+
     ```SQL
     ALTER TABLE nome_da_tabela
     ADD nome_da_coluna tipo_da_coluna
     ```
-  - Para atualizarmos/inserirmos dados de uma coluna:
+  </details>
+
+  <details>
+  <summary>
+  Para atualizarmos/inserirmos dados de uma coluna:
+  </summary>
     ```SQL
     UPDATE nome_da_tabela
     SET nome_da_coluna = dado_que_voce_quer
     WHERE true 
     --true serve para quando queremos que todas as linhas sejam atualizadas.
     ```
+    </details>
+
+    <details>
+    <summary>
     Se quisermos por exemplo atualizar o tipo da coluna ou renomeá-la:
+    </summary>
+
     ```SQL
     --Alterar tipo
     ALTER TABLE nome_da_tabela
@@ -223,7 +284,8 @@ As funções servem para criarmos comandos personalizados de scripts que serão 
     ALTER TABLE nome_da_tabela
     RENAME COLUMN nome_da_coluna TO novo_nome
     ```
-  - Para deletar uma coluna, usamos: `ALTER TABLE nome_da_tabela DROP COLUMN nome_da_coluna`
+    </details>
+  Para deletar uma coluna, usamos: `ALTER TABLE nome_da_tabela DROP COLUMN nome_da_coluna`
 
 ### 📒 Projeto 1 - Dashboard de Acompanhamento de Vendas
 Para a criação do Dashboard, no Excel precisamos definir 3 páginas, sendo elas a janela do Dashboard que puxará os dados da janela dos Resultados e por fim uma janela para documentar as Queries.
