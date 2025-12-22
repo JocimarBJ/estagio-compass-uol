@@ -1,50 +1,82 @@
-# [Exercícios](./Desafio.txt)
+# ⏩ Etapas
 
-### Exercício 1
-No primeiro exercício foi proposto que selecionássemos os nomes das cidades de forma única, onde existem na tabela de *sales.customers* com a condição de que fossem do estado de Minas Gerais, ordenando a consulta em ordem alfabética. 
 
-1. **Passo a Passo até o resultado**
+###  [Etapa 1 - Normalização e DER](./Etapa%201/modelo_relacional_normalizado.sql)
     
-    Primeiramente tive que buscar no **pgAdmin** as colunas e tabelas que precisaria saber para fazer a consulta. Então identifiquei as colunas *city* e *state*, além da tabela *customers* contida no schema *sales*.
-    <br>
-    Identificado as colunas, precisei identificar quais comandos utilizaria. Logo, identifiquei `SELECT DISTINCT`, `FROM`, `WHERE` e `ORDER BY`.
-    <br>
-    Então, baseando-se no conhecimento que já tinha e nas aulas recém vistas realizei o script que faria a consulta.
+- [Arquivo do Diagrama](./Etapa%201/concessionaria_DER.erd)
+    (Utilize a extensão 
+    [ERD Editor](https://marketplace.visualstudio.com/items?itemName=dineug.vuerd-vscode) 
+    no VSCode para visualizá-lo)
 
-2. **Explicação do código**
+Durante esta etapa eu... Diagrama DER e pensei isso aquilo e aquilo durante... então eu identifiquei isso e aquilo...
+<details><summary style="font-weight: bold;"> 📌Diagrama Entidade-Relacionamento Normalizado</summary>
 
-    Nessa parte pode-se perceber com esse código que utilizei o `SELECT DISTINCT` para evitar informações redundantes, o `FROM` para informar de onde deveria ser buscado, o `WHERE` para condicionar e filtrar as cidades mostrando apenas as que tivessem o *state* igual à *' MG '* e o `ORDER BY` para ordernar de forma crescente (default) as cidades de A-Z:
+![Evidência DER](../Evidencias/Etapa%201%20-%20Relacional/diagrama_modelo_relacional_normalizado.png)
+</details>
+<br>
+aaaaaaaaaaa
+<details><summary style="font-weight: bold;"> 👨‍💻 Modelo Físico (SQLite) </summary>
+bbbbbbbb
+<details><summary> Criando Tabelas:</summary>
+ccccccccc
+
+![Criando Tabelas](../Evidencias/Etapa%201%20-%20Relacional/imagens-execucao/criando_tabelas.png)
+```SQL
+
+```
+    
+</details><br>
+bbbbbbbb
+<details><summary> Inserindo Dados:</summary>
+
+- Inserindo dados na Tabela Carro:
+
+    ![Inserindo dados na Tabela Carro](../Evidencias/Etapa%201%20-%20Relacional/imagens-execucao/inserindo/inserindo_dados_tb_carro.png)
     ```SQL
-    SELECT DISTINCT city 
-    FROM sales.customers 
-    WHERE state = 'MG' 
-    ORDER BY city
+
     ```
 
-    Obtendo assim o seguinte retorno:
-    <details>
-    <summary>Clique aqui para ver</summary>
-    
-    ![evidencia do resultado - exercicio 1](../Evidencias/evidencia%201.png)
+- Inserindo dados na Tabela Cliente:
 
-    </details>
-
-### Exercício 2
-
-No segundo exercício foi proposto que fizéssemos a consulta utilizando o *visit_id*, filtrando as 10 compras mais recentes efetuadas.
-
-1. **Passo a Passo até o resultado**
-
-    Seguindo a mesma lógica do primeiro exercício, identifiquei os comandos e tabelas necessárias para a consulta.
-
-2. **Explicação do código**
-
-    Com este código, note que utilizei um `SELECT` normal, já que não havia sido solicitado a unicidade dos dados seguido da coluna *visit_id*, o `FROM` da coluna correspondente às compras/funil de vendas (*sales.funnel*), em seguida o `WHERE` de *paid_date* 
-
+    ![Inserindo dados na Tabela Cliente](../Evidencias/Etapa%201%20-%20Relacional/imagens-execucao/inserindo/inserindo_dados_tb_cliente.png)
     ```SQL
-    SELECT visit_id
-    FROM sales.funnel 
-    WHERE paid_date IS NOT NULL 
-    ORDER BY paid_date DESC 
-    LIMIT 10
+    
     ```
+
+- Inserindo Dados na Tabela Combustivel:
+
+    ![Inserindo dados na Tabela Combustivel](../Evidencias/Etapa%201%20-%20Relacional/imagens-execucao/inserindo/inserindo_dados_tb_combustivel.png)
+    ```SQL
+    
+    ```
+
+- Inserindo dados na Tabela Vendedor:
+
+    ![Inserindo dados na Tabela Vendedor](../Evidencias/Etapa%201%20-%20Relacional/imagens-execucao/inserindo/inserindo_dados_tb_vendedor.png)
+    ```SQL
+    
+    ```
+</details>
+
+</details>
+<br>
+
+<details>
+<summary> Obtive esse retorno: </summary>
+
+![amostra](../Evidencias/Etapa%201%20-%20Relacional/imagens-execucao/evidencia1_etapa1_execucao.png)
+
+</details>
+
+<hr/>
+
+### [Etapa 2 - Dimensional (Star Schema)](./Etapa%202/modelo_dimensional.sql) 
+
+- [Arquivo do Diagrama](./Etapa%202/concessionaria_DIM.erd)
+
+Nessa etapa pode-se perceber com esse código:
+```
+Esta é uma linha de código
+```
+Obtive esse retorno
+![amostra](../Evidencias/sample.webp)

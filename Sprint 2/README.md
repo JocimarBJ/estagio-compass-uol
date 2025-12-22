@@ -1,29 +1,28 @@
 # 📝 Resumo
-
-<div align="center">
  
-|<h3 align="center">🔍ÍNDICE</h3>|
-|-|
-| [SQL para Análise de Dados](#-sql-para-análise-de-dados) |
-| [Exercícios](#exercícios) |
-| [Evidências](#evidências) |
-| [Demais Pastas](#demais-pastas)|
+|<h3>🔍ÍNDICE</h3>|
+|------------------|
+| [🧠 Competências Aplicadas](#-competências-aplicadas)                                               |
+| [👨‍💻 Curso 1 - SQL para Análise de Dados](#-curso-sql-para-análise-de-dados---do-básico-ao-avançado) |
+| [📊 Curso 2 - Data & Analytics](#-curso-data--analytics---pb---aws---210)                           |
+| [✍ Exercícios](#exercícios)                                                                        |
+| [👁‍🗨 Evidências](#evidências)                                                                        |
+| [🎯 Desafio da Sprint](#desafio-da-sprint)                                                          |
+| [✅ Certificados](#certificados)                                                                    |
 
-</div>
 
 ## 🧠 Competências aplicadas
 - SQL avançado
-- Modelagem relacional
-- Subqueries e CTEs (WITH)
-- Funções agregadas
+- Tratamento e exportação de dados
+- Modelagem e raciocínio relacional
 - Análise de dados
 - Boas práticas de legibilidade
 
-## 📊 SQL Para Análise de Dados
-### 🔧Configuração do ambiente de trabalho
+## 👨‍💻 Curso: SQL Para Análise de Dados - Do Básico ao Avançado
+### 🔧 Seção 2: Configuração do ambiente de trabalho
 Como meu pgAdmin já estava instalado na minha máquina, eu somente fiz a revisão do que foi passado para ver se não havia ausência de algum fator fundamental para a execução dos futuros exercícios;
 
-### ⌨️ Comandos básicos
+### ⌨️ Seção 3: Comandos básicos
 A maioria dos comandos, como Select, Where, Order By eu já conhecia, no entanto pude aprender como funcionava o Limit e o Distinct.
 - Podemos utilizar o asterisco `*` quando desejamos printar todas as colunas da tabela e seus dados.
 - `SELECT` usamos frequentemente na linguagem SQL, serve para selecionarmos colunas de tabelas e mostrar os dados filtrados.
@@ -45,7 +44,7 @@ A maioria dos comandos, como Select, Where, Order By eu já conhecia, no entanto
 
 Houve demais informações e detalhes durante as aulas, como: não utilizar vírgula antes do FROM e etc. Algo que observei não ser retratado foi que uma boa prática para comandos SQL é utilizar eles em maiúsculo, por exemplo: `SELECT email FROM ...` ao invés de `Select Email FROM ...`, visando a organização e formatação textual, como uma melhor compreensão e praticidade para qualquer desenvolvedor que estiver lendo.
 
-### ➗ Operadores
+### ➗ Seção 4: Operadores
 Temos diversos tipos de operadores, sendo eles **aritméticos, comparação e lógicos**.
 Eles servem para executarmos cálculos matemáticos, comparar valores retornando *true* ou *false* e unir expressões simples em uma composta. <br>
 São muitos, mas podemos citar alguns como, respectivamente:
@@ -53,7 +52,7 @@ São muitos, mas podemos citar alguns como, respectivamente:
 - ``` =, <=, =>, <>, >, <...```
 - ``` AND, OR, NOT, IN, ON, LIKE, USING... ```
 
-### 🔁Funções Agregadas
+### 🔁 Seção 5: Funções Agregadas
 Existem vários tipos de funções agregadas, sendo elas: Count(), Sum(), Min(), Max(), Avg(), Group By e Having.
 - `COUNT( )` serve para contabilizar
 - `SUM( )` serve para somar
@@ -65,7 +64,7 @@ Existem vários tipos de funções agregadas, sendo elas: Count(), Sum(), Min(),
 
 As funções agregadas não computam células NULL como zero, elas ignoram.
 
-### ⚙️ Join
+### ⚙️ Seção 6: Join
 Existem 4 tipos de Join para serem utilizados no SQL, sendo eles:
 - ⟗ `FULL JOIN` pega todos os dados, tanto da tabela da esquerda (tabela declarada primeiro) e tabela da direita (tabela declarada depois).
 - ⟕ `LEFT JOIN` pega todos os dados da tabela da esquerda, e da tabela da direita pega somente aqueles correspondentes à tabela da esquerda.
@@ -75,13 +74,13 @@ Existem 4 tipos de Join para serem utilizados no SQL, sendo eles:
 São mais comumente utilizados o Left Join e o Inner Join. Além disso, baseando-se nesses 4 comandos de Join, podemos conseguir uma variação de até 8 jeitos diferentes de extrair os dados na consulta, como:
 `USING, NATURAL JOIN, SELF JOIN, CROSS JOIN, OUTER JOIN`
 
-### <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Venn_0111_1111.svg/250px-Venn_0111_1111.svg.png" width="18" style="vertical-align: middle"/> Unions
+### <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Venn_0111_1111.svg/250px-Venn_0111_1111.svg.png" width="18" style="vertical-align: middle"/> Seção 7: Unions
 O comando ``UNION`` serve basicamente para unir uma tabela sobre a outra, desde que tenham a mesma quantidade de colunas e essas colunas sejam do mesmo tipo.
 Existe o `UNION ALL` e o `UNION`, sendo sua principal diferença que o UNION ALL não checa e remove as linhas duplicadas.
 
 *É recomendado utilizar somente o UNION ALL quando sabemos que o conteúdo das tabelas são diferentes.*
 
-### 🔀 Subqueries
+### 🔀 Seção 8: Subqueries
 As Subqueries servem para que possamos consultar os dados de outras consultas que estão embutidas, ou seja, utilizar os resultados de uma query dentro de outra query.
 Existem 4 tipos de Subquery, basicamente são no: `WHERE, WITH, FROM e SELECT`.
 
@@ -91,7 +90,7 @@ Alguns pontos de atenção seriam:
 - Não é recomendado utilizar Subquery no FROM, já que toda subquery no FROM pode ser substituída por uma com WITH
 - A Subquery no SELECT é bem pesada, é como se estivesse rodando uma query a cada linha. Algumas vezes é o único jeito de responder uma pergunta, mas é bom evitar usar. Além disso, ela só pode retornar um dado, como no caso do WHERE.
 
-### 🔄 Tratamento de Dados
+### 🔄 Seção 9: Tratamento de Dados
 
 - **Conversão de Unidades**: <br>
   Existem dois jeitos de conversão (type casting), uma das formas utiliza `::` e na outra a função `CAST()`, basicamente. Existem outras funções, que serão citadas mais a abaixo.
@@ -204,7 +203,7 @@ As funções servem para criarmos comandos personalizados de scripts que serão 
     ```
   </details>
 
-### 🔣 Manipulação de Tabelas:
+### 🔣 Seção 10: Manipulação de Tabelas:
 - **Tabelas - Criação e Deleção:**
   <details>
   <summary>
@@ -272,6 +271,7 @@ As funções servem para criarmos comandos personalizados de scripts que serão 
   <summary>
   Para atualizarmos/inserirmos dados de uma coluna:
   </summary>
+  
     ```SQL
     UPDATE nome_da_tabela
     SET nome_da_coluna = dado_que_voce_quer
@@ -295,23 +295,27 @@ As funções servem para criarmos comandos personalizados de scripts que serão 
     RENAME COLUMN nome_da_coluna TO novo_nome
     ```
     </details>
+
   Para deletar uma coluna, usamos: `ALTER TABLE nome_da_tabela DROP COLUMN nome_da_coluna`
 
-### 📒 Projeto 1 - Dashboard de Acompanhamento de Vendas
+### 📒 Seção 11: Projeto 1 - Dashboard de Acompanhamento de Vendas
 Para a criação do Dashboard, no Excel precisamos definir 3 páginas, sendo elas a janela do Dashboard que puxará os dados da janela dos Resultados e por fim uma janela para documentar as Queries.
 Durante a realização do projeto utilizamos todos os conhecimentos adquiridos ao longo do curso para formar um dashboard representativo dos dados, trazendo-os de forma mais visualmente clara.
 
-### 📒 Projeto 2 - Análise de Perfil dos Clientes
+### 📒 Seção 12: Projeto 2 - Análise de Perfil dos Clientes
 No projeto 2 exemplar utilizamos dos mesmos conhecimentos para resolver o problema e representar como gráficos. Os gráficos, como no projeto 1, foram apresentados no Excel e foi dividido da mesma forma as suas páginas.
 
+## 🔎 Curso: Data & Analytics - PB - AWS - 2/10
+### 🎲 Seção 14: Modelagem de Dados
 
-## 💡 Conceitos de Data & Analytics
+**Modelagem Relacional:**
 
-### ETL & ELT
 
-# Exercícios
+**Modelagem Dimensional:**
 
-### 📚 Caso de Estudo Biblioteca
+# ✍Exercícios
+
+### 📚 Seção 10 - Caso de Estudo Biblioteca
 1. <details><summary><a href="./Exercicios/Caso-biblioteca/exercicio1.sql">Resposta Ex1</a></summary>
     
     ```SQL
@@ -335,13 +339,18 @@ No projeto 2 exemplar utilizamos dos mesmos conhecimentos para resolver o proble
 3. <details><summary><a href="./Exercicios/Caso-biblioteca/exercicio3.sql">Resposta Ex3</a></summary>
     
     ```SQL
-    SELECT count(liv.cod) as quantidade, edi.nome, en.estado, en.cidade
-    FROM livro AS liv
-    LEFT JOIN editora AS edi
-    ON edi.codEditora = liv.editora
-    LEFT JOIN endereco AS en
-    ON en.codEndereco = edi.endereco
-    GROUP BY edi.codEditora, edi.nome, en.estado, en.cidade
+    SELECT count(liv.cod) AS quantidade, 
+           edi.nome, 
+           en.estado, 
+           en.cidade
+    FROM livro            AS liv
+    LEFT JOIN editora     AS edi ON edi.codEditora = liv.editora
+    LEFT JOIN endereco    AS en  ON en.codEndereco = edi.endereco
+    GROUP BY 
+      edi.codEditora, 
+      edi.nome, 
+      en.estado, 
+      en.cidade
     ORDER BY quantidade DESC
     LIMIT 5
     ```
@@ -415,7 +424,7 @@ No projeto 2 exemplar utilizamos dos mesmos conhecimentos para resolver o proble
     ```
    </details>
 
-### 🛒 Caso de Estudo Loja
+### 🛒 Seção 11 - Caso de Estudo Loja
 
 8. <details><summary><a href="./Exercicios/Caso-loja/exercicio8.sql">Resposta Ex8</a></summary>
     
@@ -567,11 +576,11 @@ No projeto 2 exemplar utilizamos dos mesmos conhecimentos para resolver o proble
       ```
     </details>
 
-### 🎲 Exportação de Dados
-<details><summary><a href="./Exercicios/exportacao-de-dados/etapa1.sql">3.1 - Etapa 1</a></summary>
+### 📨 Seção 13 - Exportação de Dados
+- <details><summary><a href="./Exercicios/Exportacao-de-dados/etapa1.sql">3.1 - Etapa 1</a></summary>
 
   - **Enunciado**:
-  ![Enunciado Etapa 1](./Exercicios/exportacao-de-dados/imagens-execucao/enunciado-etapa1.png)
+  ![Enunciado Etapa 1](./Exercicios/Exportacao-de-dados/imagens-execucao/enunciado-etapa1.png)
   - **Resposta**:
     ```SQL
     SELECT
@@ -589,35 +598,50 @@ No projeto 2 exemplar utilizamos dos mesmos conhecimentos para resolver o proble
     LIMIT 10
     ```
   - **Resultado**:
+    [Tabela - Etapa 1](./Exercicios/Exportacao-de-dados/etapa1-livros_mais_caros.csv)
     | CodLivro | Titulo| CodAutor | NomeAutor| Valor | CodEditora | NomeEditora |
-    |:---------:|:-----------------------------------------------------:|:---------:|:---------------------------------------------:|:-------:|:-----------:|:-------------:|
-    | 13  | Princípios de fisiologia animal | 8  | ABRAMOVAY, Ricardo | 515.64 | 13 | CBMM |
-    | 9   | Fundamentos de eletrônica | 46 | AMARAL, Luciano Do | 515.04 | 13 | CBMM |
-    | 93  | O verão das rosas | 39 | ALVES, Rubem | 514.70 | 13 | CBMM |
-    | 8   | Artesão de saberes | 47 | ASTOLFI, Jean-Pierre | 512.22 | 13 | CBMM |
-    | 45  | O texto estranho | 72 | BARROS, Regina Mambeli | 511.84 | 13 | CBMM |
-    | 28  | Limitaciones y usos del derecho de construir | 55 | BALTAR, Carlos Adolpho Magalhães | 496.59 | 13 | CBMM |
-    | 162 | Agente penitenciário | 5  | ABE, Jair Minoro | 489.27 | 1  | Ática |
-    | 161 | O casamento da Bruxa Onilda | 36 | ALVARENGA, Beatriz Gonçalves De | 480.81 | 1  | Ática |
-    | 168 | Direito social na União Européia e Mercosul | 45 | AMARAL, Adriano Benayon Do | 480.80 | 1  | Ática |
-    | 19  | Machinapolis e a caosmologia do ser | 31 | ALMEIDA, Rogério Henrique | 479.90 | 13 | CBMM |
+    |:--------:|:-----:|:--------:|:--------:|:-----:|:----------:|:-----------:|
+    | 13       | Princípios de fisiologia animal | 8  | ABRAMOVAY, Ricardo | 515.64 | 13 | CBMM |
+    | 9        | Fundamentos de eletrônica | 46 | AMARAL, Luciano Do | 515.04 | 13 | CBMM |
+    | 93       | O verão das rosas | 39 | ALVES, Rubem | 514.70 | 13 | CBMM |
+    | 8        | Artesão de saberes | 47 | ASTOLFI, Jean-Pierre | 512.22 | 13 | CBMM |
+    | 45       | O texto estranho | 72 | BARROS, Regina Mambeli | 511.84 | 13 | CBMM |
+    | 28       | Limitaciones y usos del derecho de construir | 55 | BALTAR, Carlos Adolpho Magalhães | 496.59 | 13 | CBMM |
+    | 162      | Agente penitenciário | 5  | ABE, Jair Minoro | 489.27 | 1  | Ática |
+    | 161      | O casamento da Bruxa Onilda | 36 | ALVARENGA, Beatriz Gonçalves De | 480.81 | 1  | Ática |
+    | 168      | Direito social na União Européia e Mercosul | 45 | AMARAL, Adriano Benayon Do | 480.80 | 1  | Ática |
+    | 19       | Machinapolis e a caosmologia do ser | 31 | ALMEIDA, Rogério Henrique | 479.90 | 13 | CBMM |
   </details>
 
-<details><summary><a href="./Exercicios/exportacao-de-dados/etapa1.sql">3.2 - Etapa 2</a></summary>
+
+- <details><summary><a href="./Exercicios/Exportacao-de-dados/etapa1.sql">3.2 - Etapa 2</a></summary>
 
   - **Enunciado**:
-  ![Enunciado Etapa 1](./Exercicios/exportacao-de-dados/imagens-execucao/enunciado-etapa2.png)
+    ![Enunciado Etapa 1](./Exercicios/Exportacao-de-dados/imagens-execucao/enunciado-etapa2.png)
 
   - **Resposta**:
     ```SQL
-
+    SELECT
+      edi.codEditora  AS CodEditora,
+      edi.nome        AS NomeEditora,
+      COUNT(liv.cod)  AS QuantidadeLivros
+    FROM editora        AS edi
+    JOIN livro          AS liv ON liv.editora=edi.codeditora
+    GROUP BY edi.codEditora, edi.nome 
+    ORDER BY QuantidadeLivros DESC
+    LIMIT 5
     ```
 
   - **Resultado**:
-
+    [Tabela - Etapa 2](./Exercicios/Exportacao-de-dados/etapa2-editoras_com_mais_livros.csv)
+    | CodEditora | NomeEditora | QuantidadeLivros |
+    |:----------:|:-----------:|:----------------:|
+    |     13     |     CBMM    |        138       |
+    |      1     |     Ática   |         30       |
+</details>
 <br>
 
-# Evidências
+# 👁‍🗨 Evidências
 
 <details>
 <summary style="font-weight: bold;">📚 Caso de Estudo Biblioteca
@@ -799,15 +823,45 @@ No projeto 2 exemplar utilizamos dos mesmos conhecimentos para resolver o proble
   > "Apresente a query para listar a quantidade média vendida de cada produto agrupado por estado da federação. As colunas presentes no resultado devem ser estado e nmprod e quantidade_media. Considere arredondar o valor da coluna quantidade_media na quarta casa decimal. Ordene os resultados pelo estado (1º) e nome do produto (2º).
   Obs: Somente vendas concluídas."
   
-  Neste exercício, utilizei o WHERE para filtrar apenas as vendas que foram deletadas (correspondente ao número 1, ao qual significa true em binário, já que a coluna era somente 0 ou 1) e ordenei crescentemente pelo codigo da venda (cdven).
+  Para a resolução deste exercício, utilizei a função de agregação AVG( ) para calcular a quantidade média vendida de cada produto. Esse valor foi arredondado para quatro casas decimais utilizando a função ROUND( ), conforme solicitado no enunciado.
+  Em seguida, fiz a filtragem das vendas utilizando a cláusula WHERE, garantindo que apenas vendas com status concluído fossem consideradas no cálculo. Após isso, agrupei os dados pelas colunas estado e nome do produto, de modo que a média fosse calculada corretamente para cada combinação de estado e produto.
+  Por fim, ordenei os resultados primeiramente pelo estado e, em seguida, pelo nome do produto, assegurando uma apresentação organizada e de fácil leitura dos dados retornados pela consulta.
   </details>
 
   ![Evidencia 16](./Exercicios/Caso-loja/imagens-execucao/exercicio16-sql.png)
 
 </details>
+<br>
+<details>
+<summary style="font-weight: bold;">🎲 Exportação de Dados
+</summary>
+  <details>
+  <summary>Etapa 1 - Explicação</summary>
+  
+  Para a resolução deste, no SELECT coloquei todas as colunas necessárias (com aliases) e fiz o JOIN das tabelas Livro, Editora e Autor. Depois disso, ordenei em ordem decrescente pelo valor dos livros e limitei para mostrar apenas 10.
+  </details>
 
+  ![Etapa 1 - Execução e Resolução](./Exercicios/Exportacao-de-dados/imagens-execucao/resolucao-etapa1.png)
+  
+  <details>
+  <summary>Etapa 2 - Explicação</summary>
+  
+  Para a resolução deste, no SELECT fiz a contagem da quantidade de livros utilizando a função COUNT() e coloquei as colunas que precisavam aparecer (com aliases). Depois disso fiz a conexão entre as tabelas Editora e Livro com o JOIN e agrupei por código das Editoras e pelos seus nomes, ordenando decrescentemente pela quantidade de livros de cada uma. E utilizei o LIMIT para mostrar apenas 5.
+  </details>
+
+  ![Etapa 1 - Execução e Resolução](./Exercicios/Exportacao-de-dados/imagens-execucao/resolucao-etapa1.png)
+
+</details>
 
 <br>
 
-# Demais pastas:
-**Certificados**: Não houve cursos externos, apenas dentro da Compass Udemy.
+# 🎯 Desafio da Sprint
+O desenvolvimento do desafio da sprint e seus respectivos arquivos relacionados encontram-se em sua pasta, assim como seu README que fora usado para dissertar sobre os passos executados e resultados.
+O Desafio foi desenvolvido em duas etapas fundamentais: Modelo Relacional e Modelo Dimensional.
+- 📁[Pasta do Desafio](../Sprint%202/Desafio/)
+- 📝[README do Desafio](../Sprint%202/Desafio/README.md)
+
+<br>
+
+# ✅ Certificados
+Não houve cursos externos, apenas dentro da Compass Udemy.
