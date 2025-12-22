@@ -2,13 +2,13 @@
  
 |<h3>🔍ÍNDICE</h3>|
 |------------------|
-| [🧠 Competências Aplicadas](#-competências-aplicadas)                                               |
-| [👨‍💻 Curso 1 - SQL para Análise de Dados](#-curso-sql-para-análise-de-dados---do-básico-ao-avançado) |
-| [📊 Curso 2 - Data & Analytics](#-curso-data--analytics---pb---aws---210)                           |
-| [✍ Exercícios](#exercícios)                                                                        |
-| [👁‍🗨 Evidências](#evidências)                                                                        |
-| [🎯 Desafio da Sprint](#desafio-da-sprint)                                                          |
-| [✅ Certificados](#certificados)                                                                    |
+| [🧠 Competências Aplicadas](#-competências-aplicadas) |
+| [👨‍💻 Curso 1 - SQL para Análise de Dados](#%E2%80%8D-curso-sql-para-análise-de-dados---do-básico-ao-avançado) |
+| [📊 Curso 2 - Data & Analytics](#-curso-data--analytics---pb---aws---210) |
+| [✍ Exercícios](#-exercícios) |
+| [👁‍🗨 Evidências](#-evidências) |
+| [🎯 Desafio da Sprint](#-desafio-da-sprint)  |
+| [✅ Certificados](#certificados) |
 
 
 ## 🧠 Competências aplicadas
@@ -313,7 +313,7 @@ No projeto 2 exemplar utilizamos dos mesmos conhecimentos para resolver o proble
 
 **Modelagem Dimensional:**
 
-# ✍Exercícios
+# ✍ Exercícios
 
 ### 📚 Seção 10 - Caso de Estudo Biblioteca
 1. <details><summary><a href="./Exercicios/Caso-biblioteca/exercicio1.sql">Resposta Ex1</a></summary>
