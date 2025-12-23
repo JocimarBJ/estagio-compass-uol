@@ -1,5 +1,6 @@
 -- concessionaria_normalizada.db
 -- sqlite
+PRAGMA foreign_keys = ON;
 
 ------ CONSULTAS ---------
 SELECT * FROM tb_Combustivel AS tbcom
@@ -91,7 +92,8 @@ INSERT INTO tb_Cliente (idCliente, nomeCliente, cidadeCliente, estadoCliente, pa
 (26,'Cliente vinte e seis','Campo Grande','Mato Grosso do Sul','Brasil');
 
 -- Vendedor Dados
-INSERT INTO tb_Vendedor (idVendedor, nomeVendedor, sexoVendedor, estadoVendedor) VALUES
+INSERT INTO tb_Vendedor (
+idVendedor, nomeVendedor, sexoVendedor, estadoVendedor) VALUES
 (5,'Vendedor cinco',0,'São Paulo'),
 (6,'Vendedora seis',1,'São Paulo'),
 (7,'Vendedora sete',1,'Rio de Janeiro'),

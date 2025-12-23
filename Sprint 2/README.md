@@ -4,11 +4,11 @@
 |------------------|
 | [🧠 Competências Aplicadas](#-competências-aplicadas) |
 | [👨‍💻 Curso 1 - SQL para Análise de Dados](#%E2%80%8D-curso-sql-para-análise-de-dados---do-básico-ao-avançado) |
-| [📊 Curso 2 - Data & Analytics](#-curso-data--analytics---pb---aws---210) |
+| [📊 Curso 2 - Data & Analytics](#-curso-data--analytics---pb---aws-210)                           |
 | [✍ Exercícios](#-exercícios) |
-| [👁‍🗨 Evidências](#-evidências) |
+| [👁‍🗨 Evidências](#%E2%80%8D-evidências) |
 | [🎯 Desafio da Sprint](#-desafio-da-sprint)  |
-| [✅ Certificados](#certificados) |
+| [✅ Certificados](#-certificados) |
 
 
 ## 🧠 Competências aplicadas
@@ -305,14 +305,10 @@ Durante a realização do projeto utilizamos todos os conhecimentos adquiridos a
 ### 📒 Seção 12: Projeto 2 - Análise de Perfil dos Clientes
 No projeto 2 exemplar utilizamos dos mesmos conhecimentos para resolver o problema e representar como gráficos. Os gráficos, como no projeto 1, foram apresentados no Excel e foi dividido da mesma forma as suas páginas.
 
-## 🔎 Curso: Data & Analytics - PB - AWS - 2/10
-### 🎲 Seção 14: Modelagem de Dados
+## 📊 Curso: Data & Analytics - PB - AWS 2/10
+**Modelagem Relacional**: A modelagem relacional tem como principal objetivo organizar os dados de forma estruturada, consistente e sem redundâncias, garantindo a integridade das informações. Nessa abordagem, os dados são divididos em tabelas normalizadas, cada uma representando uma entidade específica, como clientes, vendedores ou produtos. As relações entre essas entidades são estabelecidas por meio de chaves primárias e estrangeiras, assegurando coerência referencial. A normalização reduz anomalias de inserção, atualização e exclusão, tornando o modelo mais confiável para sistemas transacionais. Esse tipo de modelagem é amplamente utilizado em bancos de dados OLTP, onde há grande volume de operações de leitura e escrita. Além disso, facilita a manutenção e evolução do sistema ao longo do tempo. A modelagem relacional serve como base sólida para posteriores transformações analíticas.
 
-**Modelagem Relacional:**
-
-
-**Modelagem Dimensional:**
-
+**Modelagem Dimensional**: A modelagem dimensional é voltada para análise de dados e tomada de decisão, priorizando desempenho e facilidade de consulta. Nela, os dados são organizados em tabelas fato e tabelas dimensão, sendo a tabela fato responsável por armazenar métricas quantitativas e as dimensões por fornecer contexto analítico. O modelo Star Schema, utilizado neste projeto, simplifica as consultas ao reduzir a quantidade de junções necessárias. Essa abordagem é amplamente aplicada em ambientes de Business Intelligence e Data Warehousing. Diferentemente do modelo relacional, a modelagem dimensional aceita certa redundância para otimizar consultas analíticas. Além disso, o uso de dimensões como tempo permite análises históricas detalhadas. Dessa forma, o modelo dimensional torna os dados mais acessíveis e eficientes para análises estratégicas.
 # ✍ Exercícios
 
 ### 📚 Seção 10 - Caso de Estudo Biblioteca
