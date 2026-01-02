@@ -15,7 +15,7 @@ Tenho 20 anos, nasci em São José do Rio Preto/SP, mas atualmente moro e estudo
 </div>
 
 #### Algumas informações técnicas sobre mim:
-- 🎓 Discente de Engenharia de Software na UTFPR, 6° Semestre;
+- 🎓 Discente de Bacharelado em Engenharia de Software na UTFPR, 6° Semestre;
 - ✍ Autor do Livro [O Livro dos Ratos Pensantes](https://inteligentehub.com.br/book.html) (infantojuvenil, sobre IAs);
 - 💼 Experiência: 
    - Trabalhei na Empresa Júnior [Unect Jr.](https://www.linkedin.com/company/unectjr/posts/?feedView=all);
@@ -41,3 +41,4 @@ Tenho 20 anos, nasci em São José do Rio Preto/SP, mas atualmente moro e estudo
 
 - [x] [Sprint 1](./Sprint%201/README.md)
 - [x] [Sprint 2](./Sprint%202/README.md)
+- [x] [Sprint 3](./Sprint%203/README.md)
