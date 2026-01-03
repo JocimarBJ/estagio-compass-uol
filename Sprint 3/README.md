@@ -374,4 +374,44 @@ match variavel:
     finally: #opcional
         print("sempre executa")
 ```
+
 </details>
+
+### Seção 9: Manipulação de Arquivos
+Nesta seção foi apresentado-nos formas de manipular um arquivo `.CSV`, desde à criação até à leitura, trazendo técnicas de leitura como o Streaming, onde python lê os arquivos sobre demanda ao invés de ler por completo para então executar, reduzindo o consumo de memória. Dessa forma, fizemos a leitura e manipulação com `WITH`, `TRY/EXCEPT/FINNALLY`, com variável carregando localmente os dados e com a manipulação ocorrendo enquanto o arquivo estava em `open().`
+Houve também a utilização de funções nativas como `split()`, `strip()` e `csv.reader()`.
+
+### Seção 10: Comprehension
+- List Comprehension:
+    É uma sintaxe que cria lista de forma mais concisa e rápida a  partir de uma única linha.
+    ```python
+    [ expressão for item in lista if condicional ]
+    ```
+- Generator Comprehension:
+    Também foi citado sobre os `Generators` que têm uma sintaxe parecida, porém que traz grande diferença no quesito desempenho, consumindo menos memória que o List Comprehension, pois sua geração é feita sob demanda.
+    ```python
+    ( expressão for item in lista if condicional )
+    ```
+- Dictionary Comprehension
+
+    ```python
+    { chave:valor_expressão for item in lista if condicional }
+    ```
+
+### Seção 11: Funções
+- Para as funções existem dois tipos de parâmetros: Posicional e Nomeado.
+- Os parâmetros podem ser omitidos em determinados cenários sem que haja problemas.
+- Para o uso das tuplas e dicionários em parâmetros usamos o `*`.
+- As funções em python são tratadas como objeto e um objeto pode se comportar como uma função.
+- Nesta seção utilizamos comandos como `assert` e a linguagem HTML. Além de conceitos como packing, unpacking, callable e o Design Pattern Decorator.
+
+Durante as aulas vimos que é possível chamar funções dentro de funções, tornar funções Callable em Object, resolver o problema do parâmetro padrão mutável e aplicação do padrão de projeto Decorator.
+
+### Seção 13: Programação Orientada à Objetos
+Nesta seção vimos a definição de Classe e Objeto, do que são compostos e uma visão geral de POO, além dos seus principais pilares.
+- Os 4 pilares de POO são: 
+    - `Herança`: Capacidade de reusar código vindo de um tipo mais genérico e recebendo comportamento por herança pra um tipo mais específico.
+    - `Polimorfismo (conceito DuckType)`: Capacidade de substituir tipos que se comportam do mesmo jeito. Muda um pouco de acordo com o tipo de linguagem que você utiliza e a forma como implementamos.
+    - `Encapsulamento`: Capacidade de esconder os detalhes de implementação, tornando necessário somente conhecer a interface de comunicação e o que lhe dará como retorno.
+    - `Abstração`: Saber extrair do mundo real o que de fato é relevante para o sistema.
+Também foi mostrado diferente tipos de exemplos utilizando método construtor (`__init__`) e outros métodos como `__str__`, `__iter__`, `super()`, além de bibliotecas como `datetime`
