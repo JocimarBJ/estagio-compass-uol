@@ -3,6 +3,34 @@
 |<h3>🔍ÍNDICE</h3>|
 |------------------|
 | [🧠 Competências Aplicadas](#-competências-aplicadas) |
+| [🐍 Curso: Python 3 - Do básico ao avançado](#-curso-python-3---do-básico-ao-avançado) |
+| [🟢 Seção 2: Introdução Python](#-seção-2-introdução-python) |
+| [🔧 Seção 3: Configuração do Ambiente Python](#-seção-3-configuração-do-ambiente-python) |
+| [▶️ Seção 4: Executando Código Python](#-seção-4-executando-código-python) |
+| [📚 Seção 5: Fundamentos de Python](#-seção-5-fundamentos-de-python) |
+| [🧩 Seção 7: Estruturas de Controle](#-seção-7-estruturas-de-controle) |
+| [📂 Seção 9: Manipulação de Arquivos](#-seção-9-manipulação-de-arquivos) |
+| [⚡ Seção 10: Comprehension](#-seção-10-comprehension) |
+| [🔃 Seção 11: Funções](#-seção-11-funções) |
+| [🧱 Seção 13: Programação Orientada à Objetos](#-seção-13-programação-orientada-à-objetos) |
+| [🔁 Seção 15: Programação Funcional](#-seção-15-programação-funcional) |
+| [🧪 Seção 17: Isolamento de Ambientes](#-seção-17-isolamento-de-ambientes) |
+
+## 🧠 Competências aplicadas
+- Lógica de programação  
+- Sintaxe e fundamentos da linguagem Python  
+- Tipos de dados, operadores e estruturas nativas  
+- Estruturas de controle (condicionais, laços e exceções)  
+- Manipulação de listas, tuplas, dicionários e conjuntos  
+- Comprehensions e generators  
+- Programação funcional (`lambda`, `map`, `filter`, `reduce`)  
+- Funções de primeira classe e de alta ordem  
+- Closures, recursão e imutabilidade  
+- Lazy evaluation e uso de iteradores  
+- Programação Orientada a Objetos (POO)  
+- Boas práticas e legibilidade de código (Zen of Python)  
+- Manipulação de arquivos (`with`, `csv`, streaming)  
+- Uso de ambientes virtuais (`.venv`) 
 
 ## 🐍 Curso: Python 3 - Do básico ao avançado
 ### 🟢 Seção 2: Introdução Python
@@ -45,10 +73,10 @@
 ### 🔧 Seção 3: Configuração do Ambiente Python
 Durante as aulas do curso, fomos instruídos à instalar o Python 3 e o Anaconda, configurando o Jupyter Navigator para as futuras resoluções.
 
-### Seção 4: Executando Código Python
+### ▶️ Seção 4: Executando Código Python
 Podemos executar um código python utilizando o interpretador próprio da linguagem através de linhas de comando no terminal. Também através do Jupyter ou no VSCode.
 
-### Seção 5: Fundamentos de Python
+### 📚 Seção 5: Fundamentos de Python
 Nessa seção retratamos sobre a forma que funcionam as sentenças de Python.
 - Python se importa com as indentações e quebras de linha
 - Para acessar uma explicação sobre um comando, utilizamos `help(print)`. (Print foi um exemplo).
@@ -71,7 +99,7 @@ Nessa seção retratamos sobre a forma que funcionam as sentenças de Python.
 <details><summary style="font-weight:bold">Variáveis</summary>
 
 Quando criamos uma variável em python, não definimos o tipo dessa variável, ou seja, dinamicamente o interpretador vai descobrir qual tipo de variável é.
-No entanto, por ser uma linguagem fortemente tipada e dinâmica, significa que o Python sempre estará ciente sobre a existência dos tipos e faz a validação se podemos ou não fazer determinadas operações, no entanto não irá bloquear você de, a partir de uma única variável, colocar diferentes tipos nessa variável.
+No entanto, por ser uma linguagem fortemente tipada e dinâmica, significa que o Python sempre estará ciente sobre a existência dos tipos e faz a validação se podemos ou não fazer determinadas operações, no entanto não irá bloquear você de, a partir de uma única variável, colocar diferentes tipos nessa variável. Em suma, Python é dinamicamente tipada, mas fortemente tipada, ou seja, o tipo não é declarado explicitamente, porém o Python não permite operações inválidas entre tipos diferentes.
 </details>
 
 <details><summary style="font-weight:bold">Comentários e Boas Práticas</summary>
@@ -167,7 +195,7 @@ Comumente utilizamos os comentários para contextualizar, sendo utilizado geralm
     | not not True | True
 
     **Operadores Bit-Bit**<br>
-    Compara os bits das variáveis entre si e funciona como um operador lógico, no entanto é necessário ter cuidado ao usar. Quando precisarmos usar operadores lógicos não é recomendado usá-los.
+    Operadores bit a bit operam bit a bit, não sobre valores booleanos diretamente. Embora lembrem operadores lógicos, não devem ser usados como substitutos de and / or.
     - `&` - AND
     - `|` - OR
     - `^` - XOR
@@ -201,7 +229,7 @@ Comumente utilizamos os comentários para contextualizar, sendo utilizado geralm
 
 <details><summary style="font-weight:bold">Builtins</summary>
 
-As funções `type()`, `help()`, `print()` e etc, fazem parte do Builtins.
+As funções como `type()`, `help()`, `print()` e etc, fazem parte do namespace built-in e podem ser usadas diretamente, sem importação.
 Para usarmos precisamos fazer algo como:
 ```Python
 __builtins__.type('Fala galera')
@@ -309,7 +337,7 @@ print(s.substitute(n=nome, i=idade))
 
 </details>
 
-### Seção 7: Estruturas de Controle
+### 🧩 Seção 7: Estruturas de Controle
 Nesta seção do curso, foi nos apresentado as estruturas de controle IF-ELSE, WHILE, FOR, SWITCH(simulado) e MATCH-CASE, além de bibliotecas como `random`.
 
 <details><summary style="font-weight:bold">Estrutura de Condição</summary>
@@ -377,11 +405,11 @@ match variavel:
 
 </details>
 
-### Seção 9: Manipulação de Arquivos
+### 📂 Seção 9: Manipulação de Arquivos
 Nesta seção foi apresentado-nos formas de manipular um arquivo `.CSV`, desde à criação até à leitura, trazendo técnicas de leitura como o Streaming, onde python lê os arquivos sobre demanda ao invés de ler por completo para então executar, reduzindo o consumo de memória. Dessa forma, fizemos a leitura e manipulação com `WITH`, `TRY/EXCEPT/FINNALLY`, com variável carregando localmente os dados e com a manipulação ocorrendo enquanto o arquivo estava em `open().`
 Houve também a utilização de funções nativas como `split()`, `strip()` e `csv.reader()`.
 
-### Seção 10: Comprehension
+### ⚡ Seção 10: Comprehension
 - List Comprehension:
     É uma sintaxe que cria lista de forma mais concisa e rápida a  partir de uma única linha.
     ```python
@@ -393,12 +421,12 @@ Houve também a utilização de funções nativas como `split()`, `strip()` e `c
     ( expressão for item in lista if condicional )
     ```
 - Dictionary Comprehension
-
     ```python
     { chave:valor_expressão for item in lista if condicional }
     ```
 
-### Seção 11: Funções
+
+### 🔃 Seção 11: Funções
 - Para as funções existem dois tipos de parâmetros: `Posicional` e `Nomeado`.
 - Os parâmetros podem ser omitidos em determinados cenários sem que haja problemas.
 - Para o uso das tuplas e dicionários em parâmetros usamos o `*`.
@@ -407,7 +435,7 @@ Houve também a utilização de funções nativas como `split()`, `strip()` e `c
 
 Durante as aulas vimos que é possível chamar funções dentro de funções, tornar funções Callable em Object, resolver o problema do parâmetro padrão mutável e aplicação do padrão de projeto Decorator. Ademais, além do `return`, podemos usar o `yield` em seu lugar seguido de uma numeração (`yield 1, yield 2, ...`). O `yield` diferentemente do return pausa a função ao invés de encerrá-la, tornando sua execução contínua e sob demanda, pois utiliza do conceito de Lazy Evaluation, podendo retornar mais de um valor e voltando à sua execução onde parou após feita uma nova demanda.
 
-### Seção 13: Programação Orientada à Objetos
+### 🧱 Seção 13: Programação Orientada à Objetos
 Nesta seção vimos a definição de Classe e Objeto, do que são compostos e uma visão geral de POO, além dos seus principais pilares.
 - Os 4 pilares de POO são: 
     - `Herança`: Capacidade de reusar código vindo de um tipo mais genérico e recebendo comportamento por herança pra um tipo mais específico.
@@ -416,7 +444,7 @@ Nesta seção vimos a definição de Classe e Objeto, do que são compostos e um
     - `Abstração`: Saber extrair do mundo real o que de fato é relevante para o sistema.
 Também foi mostrado diferente tipos de exemplos utilizando método construtor (`__init__`) e outros métodos como `__str__`, `__iter__`, `super()`, além de bibliotecas como `datetime`
 
-### Seção 15: Programação Funcional
+### 🔁 Seção 15: Programação Funcional
 Nesta seção estudamos sobre o paradigma da programação funcional e seus principais tópicos: 
 - `First Class Functions`: funções que são tratadas como qualquer outro valor, são tratadas como um dado.
     <details><summary>Exemplo</summary>
@@ -469,7 +497,7 @@ Nesta seção estudamos sobre o paradigma da programação funcional e seus prin
     ```python
         def multiplicar(x):
             def calcular(y):
-                return x*y                  # lazy evaluation
+                return x*y                  # uso do valor fechado (closure)
             return calcular                 # conceito de alta ordem
         triplo = multiplicar(3)             # closure criada e armazena x=3
         print(f'triplo de 3 é {triplo(3)}') # triplo(3) == calcular(3)
@@ -501,7 +529,7 @@ Nesta seção estudamos sobre o paradigma da programação funcional e seus prin
     <details><summary>Exemplo</summary>
 
     ```python
-    # map(), filter(), range(), zip(), enumarate, iter(), generators são Lazy.
+    # map(), filter(), range(), zip(), enumerate, iter(), generators são Lazy.
 
     def numeros():
         print("gerando 1")
@@ -560,7 +588,16 @@ Além disso, também foi discernido a diferença entre os paradigmas: <u>Linguag
     nums = [1, 2, 3]
     list(map(lambda x: x * 2, nums))
     ```
-    </details><br>
+    </details>
 
-### Seção 17: Isolamento de Ambientes
+### 🧪 Seção 17: Isolamento de Ambientes
 Foi feita a explicação de como criar a pasta `.venv` e sua instalação.
+
+# 👁‍🗨 Evidências
+Não houve conteúdo didático que necessitasse de comprovação técnica.
+
+# 🎯 Desafio da Sprint
+Não houve desafio da Sprint.
+
+# ✅ Certificados
+Não houve cursos externos, apenas dentro da Compass Udemy.
