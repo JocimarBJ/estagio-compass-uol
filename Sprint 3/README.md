@@ -399,13 +399,13 @@ Houve também a utilização de funções nativas como `split()`, `strip()` e `c
     ```
 
 ### Seção 11: Funções
-- Para as funções existem dois tipos de parâmetros: Posicional e Nomeado.
+- Para as funções existem dois tipos de parâmetros: `Posicional` e `Nomeado`.
 - Os parâmetros podem ser omitidos em determinados cenários sem que haja problemas.
 - Para o uso das tuplas e dicionários em parâmetros usamos o `*`.
 - As funções em python são tratadas como objeto e um objeto pode se comportar como uma função.
 - Nesta seção utilizamos comandos como `assert` e a linguagem HTML. Além de conceitos como packing, unpacking, callable e o Design Pattern Decorator.
 
-Durante as aulas vimos que é possível chamar funções dentro de funções, tornar funções Callable em Object, resolver o problema do parâmetro padrão mutável e aplicação do padrão de projeto Decorator.
+Durante as aulas vimos que é possível chamar funções dentro de funções, tornar funções Callable em Object, resolver o problema do parâmetro padrão mutável e aplicação do padrão de projeto Decorator. Ademais, além do `return`, podemos usar o `yield` em seu lugar seguido de uma numeração (`yield 1, yield 2, ...`). O `yield` diferentemente do return pausa a função ao invés de encerrá-la, tornando sua execução contínua e sob demanda, pois utiliza do conceito de Lazy Evaluation, podendo retornar mais de um valor e voltando à sua execução onde parou após feita uma nova demanda.
 
 ### Seção 13: Programação Orientada à Objetos
 Nesta seção vimos a definição de Classe e Objeto, do que são compostos e uma visão geral de POO, além dos seus principais pilares.
@@ -415,3 +415,152 @@ Nesta seção vimos a definição de Classe e Objeto, do que são compostos e um
     - `Encapsulamento`: Capacidade de esconder os detalhes de implementação, tornando necessário somente conhecer a interface de comunicação e o que lhe dará como retorno.
     - `Abstração`: Saber extrair do mundo real o que de fato é relevante para o sistema.
 Também foi mostrado diferente tipos de exemplos utilizando método construtor (`__init__`) e outros métodos como `__str__`, `__iter__`, `super()`, além de bibliotecas como `datetime`
+
+### Seção 15: Programação Funcional
+Nesta seção estudamos sobre o paradigma da programação funcional e seus principais tópicos: 
+- `First Class Functions`: funções que são tratadas como qualquer outro valor, são tratadas como um dado.
+    <details><summary>Exemplo</summary>
+
+    ```python
+    def dobro(x):
+        return x*2
+    def quadrado(x):
+        return x**2
+    if __name__ == '__main__':
+        # Retorna alternadamente o dobro ou quadrado nos números de 1 a 10
+        funcs = [dobro, quadrado] * 5
+        for func, numero in zip(funcs, range(1,11)):
+            print(f'O {func.__name__} de {numero} é {func(numero)}')
+    ```
+    </details><br>
+- `High Order Functions`: funções que recebem função como parâmetro e também poder ter como retorno uma função.
+    <details><summary>Exemplo</summary>
+
+    ```python
+    from funcao_primeira_classe_import dobro, quadrado
+    def processar(titulo, lista, funcao):
+        print(f'Processando: {titulo}')
+        for i in lista:
+            print(i, '=>', funcao(i))
+    if __name__=='__main':
+        processar('Dobros de 1 a 10', range(1,11), dobro)
+        processar('Quadrados de 1 a 10', range(1,11), quadrado)
+    ```
+    </details><br>
+- `Anonymous Functions`: São funções não nomeadas (sem nome).
+    <details><summary>Exemplo</summary>
+
+    ```python
+    # map, filter, sorted, reduce... todas são funções Anonymous.
+
+    list(map(lambda x: x * 2, nums))
+
+    list(filter(lambda x: x % 2 == 0, nums))
+
+    pessoas = [('Ana', 25), ('João', 20)]
+    sorted(pessoas, key=lambda p: p[1])
+
+    reduce(lambda a, b: a + b, nums)
+    ```
+    </details><br>
+- `Closure`: uma função que carrega junto com ela valores do escopo onde foi criada, mesmo depois desse escopo ter acabado
+    <details><summary>Exemplo</summary>
+
+    ```python
+        def multiplicar(x):
+            def calcular(y):
+                return x*y                  # lazy evaluation
+            return calcular                 # conceito de alta ordem
+        triplo = multiplicar(3)             # closure criada e armazena x=3
+        print(f'triplo de 3 é {triplo(3)}') # triplo(3) == calcular(3)
+        
+    ```
+    </details><br>
+- `Recursion`: recursão é quando uma função chama ela mesma para resolver um problema menor até chegar num caso base.
+    <details><summary>Exemplo</summary>
+
+    ```python
+    def fatorial(n):
+    if n == 0:
+        return 1      # caso base
+    return n * fatorial(n - 1)
+    ```
+    </details><br>
+- `Immutability`: imutabilidade é quando um objeto não pode ser alterado depois de criado. Se “mudou”, na real foi criado outro objeto. Devemos dar preferência para dados imutáveis, pois torna mais previsível.
+    <details><summary>Exemplo</summary>
+
+    ```python
+    # int, float, str, tuple, frozenset são tipos imutáveis
+
+    x = 10
+    x = x + 1 # 10 não virou 11, um novo int foi criado. 
+    ```
+    </details><br>
+
+- `Lazy Evaluation`: quando o código só é executado no momento em que o valor é realmente necessário, ou seja, sob demanda.
+    <details><summary>Exemplo</summary>
+
+    ```python
+    # map(), filter(), range(), zip(), enumarate, iter(), generators são Lazy.
+
+    def numeros():
+        print("gerando 1")
+        yield 1
+        print("gerando 2")
+        yield 2
+    g = numeros()
+    next(g) # Saída: gerando 1
+    ```
+    </details><br>
+
+E também algumas funções úteis:
+|Função| Utilidade| Exemplo|
+|:-:|:-:|:-:|
+|`zip()`| Junta duas listas em tuplas, seja dentro de uma lista ou uma tupla maior ou até mesmo um dicionário.
+|`lambda`| Função anônima de uma linha onde há retorno implícito. Usada para criar funções rápidas e descartáveis sem def. Assim como uma função, lambda não se limita à apenas um parâmetro.| lambda parametros: expressao`lambda i: i**2`|
+|`map()`| Função para mapear cada um dos elementos de uma lista para outros tipos de elementos em uma outra lista. Basicamente aplica outra função a cada elemento de um iterável e retorna um iterador lazy com os resultados.| `tuple(map(lambda i: i**2, tupla_1))`|
+| `filter()`|É uma função que filtra elementos de um iterável, mantendo apenas os que fazem a função retornar True.| `pares = filter(lambda x: x % 2 == 0, nums)`
+|`reduce()`|É uma função que reduz um iterável a um único valor, aplicando uma função acumuladora elemento por elemento. Necessário importar `functools` para usar.|`nums = [1, 2, 3, 4]`<br>`total = reduce(lambda a, b: a + b, nums)`|
+
+Além disso, também foi discernido a diferença entre os paradigmas: <u>Linguagem Imperativa</u>, <u>Linguagem Orientada à Objetos</u>, <u>Linguagem Declarativa</u>, <u>Linguagem Funcional</u>, na qual é subtipo de declarativa.
+- **Linguagem Imperativa** diz COMO fazer, num passo a passo, tendo como foco o controle do fluxo
+    <details><summary>Exemplo</summary>
+
+    ```python
+    # Estilo receita de bolo
+    nums = [1, 2, 3]
+    soma = 0
+
+    for n in nums:
+        soma += n
+    ```
+    </details><br>
+- **Linguagem Orientada à Objetos** foca em Objetos + Estado, mistura dados e comportamento, em suma.
+    <details><summary>Exemplo</summary>
+
+    ```python
+    class Pessoa:
+        def __init__(self, nome):
+            self.nome = nome
+    ```
+    </details><br>
+- **Linguagem Declarativa** você diz O QUE quer, não como, sendo de uma forma mais "verbosa" e expressivo. Tendo como foco os resultados e sendo um controle menos explícito.
+    <details><summary>Exemplo</summary>
+    
+    ```python
+    sum([1, 2, 3])
+    ```
+    </details><br>
+- **Linguagem Funcional** é um subtipo do declarativo, tendo como foco funções. Funções de primeira classe, funções puras, imutabilidade, recursão, lazy e etc. Toda funcional é declarativa, no entanto, nem toda declarativa é funcional.
+    <details><summary>Exemplo</summary>
+    
+    ```python
+    reduce(lambda a, b: a + b, [1, 2, 3])
+    # OU
+    nums = [1, 2, 3]
+    list(map(lambda x: x * 2, nums))
+    ```
+    </details><br>
+
+### Seção 17: Isolamento de Ambientes
+Foi feita a explicação de como criar a pasta `.venv` e sua instalação.

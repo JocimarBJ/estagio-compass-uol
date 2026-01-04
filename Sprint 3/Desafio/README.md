@@ -1,0 +1,1 @@
+Não houve desafio nesta sprint
