@@ -461,7 +461,7 @@ Nesta seção estudamos sobre o paradigma da programação funcional e seus prin
             print(f'O {func.__name__} de {numero} é {func(numero)}')
     ```
     </details><br>
-- `High Order Functions`: funções que recebem função como parâmetro e também poder ter como retorno uma função.
+- `High Order Functions`: funções que recebem função como parâmetro e também pode ter como retorno uma função.
     <details><summary>Exemplo</summary>
 
     ```python
