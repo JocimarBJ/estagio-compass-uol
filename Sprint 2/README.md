@@ -845,7 +845,7 @@ No projeto 2 exemplar utilizamos dos mesmos conhecimentos para resolver o proble
   Para a resolução deste, no SELECT fiz a contagem da quantidade de livros utilizando a função COUNT() e coloquei as colunas que precisavam aparecer (com aliases). Depois disso fiz a conexão entre as tabelas Editora e Livro com o JOIN e agrupei por código das Editoras e pelos seus nomes, ordenando decrescentemente pela quantidade de livros de cada uma. E utilizei o LIMIT para mostrar apenas 5.
   </details>
 
-  ![Etapa 1 - Execução e Resolução](./Exercicios/Exportacao-de-dados/imagens-execucao/resolucao-etapa1.png)
+  ![Etapa 2 - Execução e Resolução](./Exercicios/Exportacao-de-dados/imagens-execucao/resolucao-etapa2.png)
 
 </details>
 
