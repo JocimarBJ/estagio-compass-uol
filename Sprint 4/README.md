@@ -1,17 +1,22 @@
 # 📝 Resumo
  
 ## 🔍 Índice
-- [Competências Aplicadas](#competências-aplicadas)
-- [Curso: Ciência de Dados para Iniciantes com Projetos Reais](#curso-ciência-de-dados-para-iniciantes-com-projetos-reais)
-- [Exercícios](#exercícios)
-- [Evidências](#evidências)
-- [Desafio da Sprint](#desafio-da-sprint)
-- [Certificados](#certificados)
+- [Competências Aplicadas](#-competências-aplicadas)
+- [Curso: Ciência de Dados para Iniciantes com Projetos Reais](#%E2%80%8D-curso-ciência-de-dados-para-iniciantes-com-projetos-reais)
+- [Exercícios](#-exercícios)
+- [Evidências](#%E2%80%8D-evidências)
+- [Desafio da Sprint](#-desafio-da-sprint)
+- [Certificados](#-certificados)
 
 
 
 ## 🧠 Competências aplicadas
-
+- Leitura, tratamento e processamento de dados a partir de arquivos CSV
+- Aplicação prática do processo ETL (extração, transformação e carga)
+- Uso de programação funcional com map, lambda e funções de ordenação
+- Manipulação de strings e conversão de tipos de dados
+- Organização e exportação de resultados em arquivos de saída
+- Estruturação de código legível, modular e reutilizável
 
 ## 👨‍🔬 Curso: Ciência de Dados para Iniciantes com Projetos Reais
 ### Seção 4: Pandas
@@ -506,6 +511,7 @@ Nesta seção, pegamos um projeto real para realizarmos a consulta dos dados, ut
 27. <details><summary><a href="./Exercicios/ETL/etapa-1.py">Resposta: 3.1 - Etapa 1</a></summary>
 
     - **Enunciado**:
+
         ![Enunciado Etapa 1](./Exercicios/ETL/enunciados/enunciado-etapa1.png)
 
     - **Resposta**:
@@ -530,6 +536,7 @@ Nesta seção, pegamos um projeto real para realizarmos a consulta dos dados, ut
 28. <details><summary><a href="./Exercicios/ETL/etapa-2.py">Resposta: 3.2 - Etapa 2</a></summary>
 
     - **Enunciado**:
+
         ![Enunciado Etapa 2](./Exercicios/ETL/enunciados/enunciado-etapa2.png)
 
     - **Resposta**:
@@ -556,6 +563,7 @@ Nesta seção, pegamos um projeto real para realizarmos a consulta dos dados, ut
 29. <details><summary><a href="./Exercicios/ETL/etapa-3.py">Resposta: 3.3 - Etapa 3</a></summary>
 
     - **Enunciado**:
+
         ![Enunciado Etapa 3](./Exercicios/ETL/enunciados/enunciado-etapa3.png)
 
     - **Resposta**:
@@ -582,6 +590,7 @@ Nesta seção, pegamos um projeto real para realizarmos a consulta dos dados, ut
 30. <details><summary><a href="./Exercicios/ETL/etapa-4.py">Resposta: 3.4 - Etapa 4</a></summary>
 
     - **Enunciado**:
+
         ![Enunciado Etapa 4](./Exercicios/ETL/enunciados/enunciado-etapa4.png)
 
     - **Resposta**:
@@ -635,6 +644,7 @@ Nesta seção, pegamos um projeto real para realizarmos a consulta dos dados, ut
 31. <details><summary><a href="./Exercicios/ETL/etapa-5.py">Resposta: 3.5 - Etapa 5</a></summary>
 
     - **Enunciado**:
+    
         ![Enunciado Etapa 5](./Exercicios/ETL/enunciados/enunciado-etapa5.png)
 
     - **Resposta**:
@@ -1028,7 +1038,7 @@ Nesta seção, pegamos um projeto real para realizarmos a consulta dos dados, ut
 
 # 🎯 Desafio da Sprint
 O desenvolvimento do desafio da sprint e seus respectivos arquivos relacionados encontram-se em sua pasta, assim como seu README que fora usado para dissertar sobre os passos executados e resultados.
-O Desafio foi desenvolvido em subdidivido etapas fundamentais: Modelo Relacional e Modelo Dimensional.
+O Desafio foi desenvolvido em subdidivido etapas 1, 2, 3, 4, 5 e 6 para melhor clareza e organização, tais quais apresentam e explicam as resoluções utilizadas e aos resultados obtidos:
 - 📁[Pasta do Desafio](../Sprint%204/Desafio/)
 - 📝[README do Desafio](../Sprint%204/Desafio/README.md)
 
