@@ -613,6 +613,7 @@ No projeto 2 exemplar utilizamos dos mesmos conhecimentos para resolver o proble
 - <details><summary><a href="./Exercicios/Exportacao-de-dados/etapa1.sql">3.2 - Etapa 2</a></summary>
 
   - **Enunciado**:
+
     ![Enunciado Etapa 1](./Exercicios/Exportacao-de-dados/imagens-execucao/enunciado-etapa2.png)
 
   - **Resposta**:
@@ -629,6 +630,7 @@ No projeto 2 exemplar utilizamos dos mesmos conhecimentos para resolver o proble
     ```
 
   - **Resultado**:
+
     [Tabela - Etapa 2](./Exercicios/Exportacao-de-dados/etapa2-editoras_com_mais_livros.csv)
     | CodEditora | NomeEditora | QuantidadeLivros |
     |:----------:|:-----------:|:----------------:|
@@ -662,6 +664,7 @@ No projeto 2 exemplar utilizamos dos mesmos conhecimentos para resolver o proble
   A resolução foi bem simples, para listar os mais caros utilizei um ORDER BY do valor de forma Decrescente e usei LIMIT 10 para só mostrar os 10 mais caros.<br>
   E pode-se confirmar seguindo o link da imagem abaixo.
   </details>
+
 
   ![Evidencia 2](./Exercicios/Caso-biblioteca/imagens-execucao/exercicio2-sql.png)
 
@@ -828,24 +831,26 @@ No projeto 2 exemplar utilizamos dos mesmos conhecimentos para resolver o proble
 
 </details>
 <br>
-<details>
-<summary style="font-weight: bold;">🎲 Exportação de Dados
-</summary>
-  <details>
-  <summary>Etapa 1 - Explicação</summary>
+
+<details><summary style="font-weight: bold;">🎲 Exportação de Dados</summary>
+
+<details><summary>Etapa 1 - Explicação</summary>
   
   Para a resolução deste, no SELECT coloquei todas as colunas necessárias (com aliases) e fiz o JOIN das tabelas Livro, Editora e Autor. Depois disso, ordenei em ordem decrescente pelo valor dos livros e limitei para mostrar apenas 10.
-  </details>
+</details>
 
-  ![Etapa 1 - Execução e Resolução](./Exercicios/Exportacao-de-dados/imagens-execucao/resolucao-etapa1.png)
-  
-  <details>
-  <summary>Etapa 2 - Explicação</summary>
+
+![Etapa 1 - Execução e Resolução](./Exercicios/Exportacao-de-dados/imagens-execucao/resolucao-etapa1.png)
+
+
+<details><summary>Etapa 2 - Explicação</summary>
   
   Para a resolução deste, no SELECT fiz a contagem da quantidade de livros utilizando a função COUNT() e coloquei as colunas que precisavam aparecer (com aliases). Depois disso fiz a conexão entre as tabelas Editora e Livro com o JOIN e agrupei por código das Editoras e pelos seus nomes, ordenando decrescentemente pela quantidade de livros de cada uma. E utilizei o LIMIT para mostrar apenas 5.
-  </details>
+</details>
 
-  ![Etapa 2 - Execução e Resolução](./Exercicios/Exportacao-de-dados/imagens-execucao/resolucao-etapa2.png)
+
+![Etapa 2 - Execução e Resolução](./Exercicios/Exportacao-de-dados/imagens-execucao/resolucao-etapa2.png)
+
 
 </details>
 
