@@ -6,13 +6,10 @@
 
 ### Sobre Mim
 Tenho 20 anos, nasci em São José do Rio Preto/SP, mas atualmente moro e estudo em Cornélio Procópio/Paraná.
-
-<div align="center">
    
-| <img src="https://github.com/user-attachments/assets/9bf1c5bb-0bd9-49eb-b7c7-16d67760dcd1" width="300" height="450"/> |
+| <img src="https://github.com/user-attachments/assets/63039653-5a6b-4b1a-a3f5-2c49bcb2dff0" width="300" height="450"/> |
 |:---------------------------------------------:|
-   
-</div>
+
 
 #### Algumas informações técnicas sobre mim:
 - 🎓 Discente de Bacharelado em Engenharia de Software na UTFPR, 6° Semestre;
@@ -24,21 +21,23 @@ Tenho 20 anos, nasci em São José do Rio Preto/SP, mas atualmente moro e estudo
    - Atualmente estou num Projeto de Extensão da UTFPR ([InteliGente](https://inteligentehub.com.br/index.html)), mundialmente e nacionalmente reconhecido e premiado por suas soluções em IA, feitas para a comunidade e avanço da sociedade;
 - 🧠 Capacitações e Conhecimentos:
    - React, NodeJS, Express, API RestFul, SQL & NoSQL, Git & Github
-   - Conhecimento de algumas **ISOs** (ISO 9001, 9126, 29110, 12207, 25500 e outras), **métodos de análise e solução de problemas** (PDCA, Matriz 5W2H, ...), **modelos de processo** (Cascata, XP, Prototipação, Espiral, incremental, SCRUM, ...), qualidade do produto (avaliação heurística, modelo McCall), MPS.BR, CMMI e etc.
-   - Capacitações na área de Marketing e Design.
+   - Conhecimento de algumas **ISOs** (ISO 9001, 9126, 29110, 12207, 25500 e outras), **métodos de análise e solução de problemas** (PDCA, Matriz 5W2H, ...), **modelos de processo** (Cascata, XP, Prototipação, Espiral, incremental, SCRUM, ...), qualidade do produto (avaliação heurística, modelo McCall), MPS.BR, CMMI e outros conteúdos.
+   - Capacitações na área de Marketing, Design e Programação.
    - Inglês Intermediário (3/5 semestres) - Atualmente Nível B1 - CALEM/UTFPR;
 
 #### 🚲 Hobbies e Gostos:
 - Gosto de ler sobre psicologia/psicanálise, fantasia e história;
 - Gosto de jogar no PC desde os 5 anos;
-- Gosto de estudar coisas novas;
+- Gosto de estudar e aprender coisas novas, com uma grande sede por conhecimento;
 - Tenho paixão pela área da tecnologia e a maior parte de suas subcategorias;
-- No tempo livre procuro conciliar um pouco de tudo;
+- No tempo livre procuro aprender coisas novas ou me aprofundar em conteúdos didáticos;
 - Toco violino e estou aprendendo a tocar piano;
-- Busco aprender mais sobre Inteligências Artificiais sempre.
+- Busco aprender mais sobre Dados e Inteligências Artificiais sempre.
 
 ## 🔄 Sprints
 
 - [x] [Sprint 1](./Sprint%201/README.md)
 - [x] [Sprint 2](./Sprint%202/README.md)
 - [x] [Sprint 3](./Sprint%203/README.md)
+- [x] [Sprint 4](./Sprint%204/README.md)
+- [x] [Sprint 5](./Sprint%205/README.md)

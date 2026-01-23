@@ -1,0 +1,14 @@
+services:
+  carguru:
+    build:
+      context: ./etapa-1
+    image: carguru-etapa1
+    container_name: desafio-carguru
+
+  mascarar:
+    build:
+      context: ./etapa-3
+    image: mascarar-dados
+    container_name: desafio-mascarar
+    stdin_open: true
+    tty: true
