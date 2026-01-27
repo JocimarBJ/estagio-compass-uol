@@ -11,7 +11,18 @@
 
 
 ## 🧠 Competências aplicadas
-
+- Containerização de aplicações
+- Criação e otimização de imagens Docker
+- Gerenciamento de containers
+- Persistência de dados com volumes
+- Configuração e gerenciamento de redes Docker
+- Orquestração de múltiplos containers com Docker Compose
+- Uso de YAML para configuração declarativa
+- Orquestração de containers com Docker Swarm
+- Orquestração de containers com Kubernetes
+- Arquitetura escalável (horizontal scaling)
+- Boas práticas de DevOps
+- Manipulação de padrões de texto com REGEX em Python
 
 ## 👨‍🔬 Curso: Docker para Desenvolvedores (com Docker Swarm e Kubernetes)
 ### Seção 1: Introduction - Docker
