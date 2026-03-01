@@ -27,7 +27,43 @@ Durante o trajeto do curso de Git & GitHub pude relembrar os conceitos e comando
     - docs(readme): document swarm deployment
     - test(worker): add unit tests for task runner
   - Prefira vários vários commits pequenos e claros do que um commit gigante confuso.
->As demais coisas que não foram citadas, foi porque eu já as conhecia, mas o curso foi de muito proveito.
+
+- **Commits Semânticos (mais detalhado)**  
+    O padrão de mensagem do commit semântico proposto é:
+
+    ```
+    <tipo>(<escopo>): <assunto>
+    
+    <corpo>
+
+    <rodapé>
+    ```
+    Sendo <tipo> dos seguintes valores:
+
+    - `feat`: quando se trata de uma nova funcionalidade (do inglês, feature).
+    - `fix`: quando se trata de uma correção de bug.
+    - `docs`: quando se faz uma alteração na documentação.
+    - `style`: quando se trata de formatação de código.
+    - `refactor`: quando se trata de refatoração de código em produção.
+    - `test`: quando se adiciona ou refatora testes, sem impacto em código em produção.
+    - `chore`: quando se adiciona ou edita tasks do Grunt, ou Webpack, também sem impacto em produção.
+
+    O `<escopo>` é opcional, principalmente se a alteração for global, mas bons exemplos seriam init, runner, watcher, config, web-server, proxy, etc.
+
+    Para o `<corpo>` da mensagem de commit recomenda-se:
+
+    Use a forma imperativa no presente dos verbos. Prefira "change" à "changed" ou "changes"
+    Inclua os motivos das mudanças no código em comparação ao comportamento anterior
+    O `<rodapé>` pode ser dedicado para notas e avisos importantes, como se existem mudanças radicais no código que caibam uma nota. Por exemplo:
+
+    ```
+    MUDANÇA RADICAL:
+    A opção `port-runner` da linha de comando mudou para `runner-port`, para que permaneça consistente com a sintaxe do arquivo de configuração.
+    Para migrar seu projeto, mude todos os comandos, onde você usa `--port-runner`, para `--runner-port`.
+    Também pode ser utilizado para integrações, como fechar issues no GitHub utilizando a mensagem de commit.
+
+    Closes #123, #456, #789
+    Por ser uma iniciativa open source, essas guidelines são mantidas pela comunidade e opinadas em artigos. Um dos mais influentes é o Semantic Commit Messages, do Sparkbox.
 
 ## Demais pastas:
 **Certificados**: Não houve cursos externos, apenas dentro da Compass Udemy.
