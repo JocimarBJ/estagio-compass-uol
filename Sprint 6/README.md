@@ -943,3 +943,5 @@ O Readme do Desafio foi dividido em etapas, seguindo a lógica proposta pela Com
 [Certificado: AWS Partner Accreditation](./Certificados/AWS%20Partner%20Accreditation.pdf)
 
 ### AWS Cloud Quest: Cloud Practitioner
+
+[Certificado: AWS Cloud Quest Practitioner](./Certificados/AWS%20Cloud%20Quest%20Cloud%20Practitioner.pdf)
