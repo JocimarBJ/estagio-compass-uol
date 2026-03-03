@@ -2,6 +2,11 @@
    <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=red&style=for-the-badge" #vitrinedev/>
 </p>
 
+# Scholarship Compass UOL
+O [Scholarship](https://compass.uol/en/about-us/academy/) da [Compass UOL](https://compass.uol/pt/home/) é um programa de bolsas de estágio focado para a capacitação prática e intelectual de profissionais em diversas áreas de TI.
+
+**Minha Trilha: AWS Cloud Data Engineering**
+
 ## 👤 Olá, eu sou o Jocimar!
 
 ### Sobre Mim
@@ -20,7 +25,7 @@ Tenho 20 anos, nasci em São José do Rio Preto/SP, mas atualmente moro e estudo
    - Participação em Eventos e Palestras relacionados à desenvolvimento de Soft Skills, Liderança, Gestão e Pensamento Estratégico;
    - Atualmente estou num Projeto de Extensão da UTFPR ([InteliGente](https://inteligentehub.com.br/index.html)), mundialmente e nacionalmente reconhecido e premiado por suas soluções em IA, feitas para a comunidade e avanço da sociedade;
 - 🧠 Capacitações e Conhecimentos:
-   - React, NodeJS, Express, API RestFul, SQL & NoSQL, Git & Github
+   - React, NodeJS, Express, API RestFul, SQL & NoSQL, Git & Github, Python, C, Java.
    - Conhecimento de algumas **ISOs** (ISO 9001, 9126, 29110, 12207, 25500 e outras), **métodos de análise e solução de problemas** (PDCA, Matriz 5W2H, ...), **modelos de processo** (Cascata, XP, Prototipação, Espiral, incremental, SCRUM, ...), qualidade do produto (avaliação heurística, modelo McCall), MPS.BR, CMMI e outros conteúdos.
    - Capacitações na área de Marketing, Design e Programação.
    - Inglês Intermediário (3/5 semestres) - Atualmente Nível B1 - CALEM/UTFPR;
@@ -41,3 +46,5 @@ Tenho 20 anos, nasci em São José do Rio Preto/SP, mas atualmente moro e estudo
 - [x] [Sprint 3](./Sprint%203/README.md)
 - [x] [Sprint 4](./Sprint%204/README.md)
 - [x] [Sprint 5](./Sprint%205/README.md)
+- [x] [Sprint 6](./Sprint%206/README.md)
+- [x] [Sprint 7](./Sprint%207/README.md)
