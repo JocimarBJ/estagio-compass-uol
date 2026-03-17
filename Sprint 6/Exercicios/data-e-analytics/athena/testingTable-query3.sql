@@ -1,0 +1,1 @@
+select nome from meubanco.dados_pessoas where ano = 1999 order by total limit 15;

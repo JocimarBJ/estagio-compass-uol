@@ -332,6 +332,9 @@ Cada definição de tecnologia sem servidor menciona esses quatro aspectos:
     - Runtime
     - Manipulador da função do Lambda
     Com o Lambda, você somente é cobrado pelo número de vezes que o código é invocado (solicitações) e pelo tempo que ele é executado.
+    **Camadas(Layers) do Lambda:** De acordo com a documentação, as camadas do Lambda fornecem um modo conveniente de empacotar bibliotecas e outras dependências que você pode usar com suas funções Lambda. O uso de camadas reduz o tamanho dos arquivos de implantação carregados e acelera a implantação do código.  
+    Uma camada é um arquivo compactado (zip) que pode conter código ou dados adicionais. Uma camada pode conter bibliotecas, um tempo de execução personalizado, dados ou arquivos de configuração. As camadas promovem o compartilhamento de código e a separação de responsabilidades para que você possa ater-se à escrita da lógica de negócios.  
+    Quando você inclui uma camada em uma função lambda, o conteúdo é extraído para o diretório /opt no ambiente de execução
 </details>
 
 </details>
@@ -833,9 +836,128 @@ Ele é dividido em seis áreas de foco, chamadas de `pilares`.
 
 # ✍ Exercícios
 ### LAB AWS S3
-1. <details><summary>Exercício 1</summary>
+1. <details><summary><a href="./Exercicios/data-e-analytics/s3/">AWS S3</a></summary>
 
+    Criação de bucket, arquivo [index](Exercicios/data-e-analytics/s3/index.html), importação do arquivo de dados [nomes.csv](Exercicios/data-e-analytics/s3/dados/nomes.csv) e criação do arquivo 
+    ```html
+    <html xmlns="http://www.w3.org/1999/xhtml" >
+    <head>
+        <title>Home Page do meu WebSite - Tutorial de S3</title>
+    </head>
+    <body>
+    <h1>Bem-vindo ao meu website</h1>
+    <p>Agora hospedado em Amazon S3!</p>
+    <a href="./dados/nomes.csv">Download CSV File</a> 
+    </body>
+    </html>
+    ```
+</details>
 
+2. <details><summary><a href="./Exercicios/data-e-analytics/athena/">AWS Athena</a></summary>
+
+    ```sql
+    -- Passo 1: criar o database
+    CREATE DATABASE IF NOT EXISTS meubanco;
+
+    -- Passo 2: criar a tabela
+    CREATE EXTERNAL TABLE IF NOT EXISTS meubanco.dados_pessoas (
+    Nome STRING,
+    Sexo CHAR(1),
+    Total INTEGER,
+    Ano INTEGER
+    ) 
+    ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe'
+    WITH SERDEPROPERTIES (
+        'serialization.format' = ',',
+        'field.delim' = ','
+        )
+    LOCATION 's3://exercicio-s3-jocimar.com/dados/'
+    TBLPROPERTIES ('skip.header.line.count'='1');
+    
+    -- Passo 3: testar a tabela
+    SELECT nome 
+    FROM meubanco.dados_pessoas 
+    WHERE ano = 1999 
+    ORDER BY total 
+    LIMIT 15;
+
+    -- Passo 4: resgatar top 3 nomes por década
+    WITH ranking AS (
+    SELECT
+        FLOOR(ano/10)*10 AS decada,
+        nome,
+        SUM(total) AS total,
+        DENSE_RANK() OVER(
+            PARTITION BY FLOOR(ano/10)*10
+            ORDER BY SUM(total) DESC
+        ) AS posicao
+        FROM meubanco.dados_pessoas
+        WHERE ano >= 1950
+        GROUP BY FLOOR(ano/10)*10, nome
+    )
+    SELECT decada, nome, total
+    FROM ranking
+    WHERE posicao <= 3
+    ORDER BY decada, total DESC;
+    ```
+</details>
+
+3. <details><summary><a href="./Exercicios/data-e-analytics/lambda/">AWS Lambda</a></summary>
+
+    Criação da função Lambda, camada PandasLayer, [dockerfile](./Exercicios/data-e-analytics/lambda/Dockerfile) para executar e usar container com imagem `amazonlinux:2023` e upload de cópia do arquivo "minha-camada-pandas.zip" no bucket do S3.
+    ```dockerfile
+    # Arquivo Dockerfile
+    FROM amazonlinux:2023
+
+    RUN dnf update -y
+    RUN dnf install -y python3.11 python3.11-pip zip
+    RUN dnf clean all
+
+    RUN mkdir -p /root/layer_dir/python
+    RUN python3.11 -m pip install numpy==1.26.4 pandas -t /root/layer_dir/python
+
+    WORKDIR /root/layer_dir
+    RUN zip -r minha-camada-pandas.zip .
+    ```
+
+    [Buildar a imagem e Iniciar o container](./Exercicios/data-e-analytics/imagens-execucao/lambda-building-container.png)
+    ```bash
+    docker run -it amazonlinuxpython39 .
+    ```
+
+    [Copiar arquivo para o repositório local](./Exercicios/data-e-analytics/imagens-execucao/lambda-copy-container.png): 
+    ```bash 
+    docker cp <id do container>:/root/layer_dir/minha-camada-pandas.zip ./
+    ```
+
+    [Execução na AWS](./Exercicios/data-e-analytics/imagens-execucao/lambda-success-execution.png)
+    ```py
+    # Código utilizado no AWS Lambda para ler um arquivo CSV do S3 e contar o número de linhas, 
+    # retornando essa informação como resposta e completando o exercício.
+    import json
+    import pandas
+    import boto3
+    
+    
+    def lambda_handler(event, context):
+        s3_client = boto3.client('s3')
+    
+        bucket_name = 'exercicio-s3-jocimar.com'
+        s3_file_name = 'dados/nomes.csv'
+        objeto = s3_client.get_object(Bucket=bucket_name, Key=s3_file_name)
+        df=pandas.read_csv(objeto['Body'], sep=',')
+        rows = len(df.axes[0])
+    
+        return {
+            'statusCode': 200,
+            'body': f"Este arquivo tem {rows} linhas"
+        }
+    ```
+</details>
+
+4. <details><summary><a href="./Exercicios/data-e-analytics/">Limpeza de Recursos</a></summary>
+
+    Neste exercício somente era necessário fazer a [Exclusão dos arquivos usados/gerados no S3](./Exercicios/data-e-analytics/imagens-execucao/lambda-clear-bucket.png), além da [Exclusão do Bucket]() utilizado
 </details>
 
 # 👁‍🗨 Evidências
@@ -929,11 +1051,51 @@ Nesta etapa foi solicitado para configurar um grupo de Auto Scaling pra usar um 
 
 </details><br>
 
+<details><summary>Laboratório AWS</summary>
+
+<details><summary>S3 - Criação de Bucket e Site estático</summary>
+
+Nesta etapa, foi realizado a criação do bucket na AWS S3, além de ter colocado os arquivos bases necessários para a realização dos exercícios posteriores.
+![Evidência 1 - AWS S3](./Exercicios/data-e-analytics/imagens-execucao/s3-upload-archives.png)
+![Evidência 2 - AWS S3](./Exercicios/data-e-analytics/imagens-execucao/s3-website-static.png)
+</details>
+
+<details><summary>Athena - SQL e Consulta</summary>
+
+Nesta etapa, foi realizado a [criação do banco de dados](./Exercicios/data-e-analytics/athena/createDatabase-query1.sql) e da [tabela](./Exercicios/data-e-analytics/athena/createTable-query2.sql)
+![Evidência 1 - AWS Athena](./Exercicios/data-e-analytics/imagens-execucao/athena-create-database.png)
+![Evidência 2 - AWS Athena](./Exercicios/data-e-analytics/imagens-execucao/athena-create-table.png)
+![Evidência 3 - AWS Athena](./Exercicios/data-e-analytics/imagens-execucao/athena-testing-table.png)
+
+Aqui estão alguns motivos do por que usei essas funções para realizar a consulta dos [Top 3 Nomes por década](./Exercicios/data-e-analytics/athena/top3namesBydecade-query4.sql):
+- `ROW_NUMBER()`: É útil para identificar linhas únicas, paginação ou remover duplicatas.
+- `DENSE_RANK()`: Ideal quando o ranking precisa de continuidade (ranking denso) e num momento de empate, ele não escolhe apenas um, mas sim todos os elementos que obtiveram o mesmo resultado, colocando-os no mesmo patamar. Diferente do row_number() que escolhe apenas um por linha ou do rank() que não deixará de refletir empates, porém segue à risca a quantidade de itens limite definido.
+
+</details>
+
+<details><summary>Lambda - Criação e uso de Função e Camada(layer) </summary>
+
+Nesta etapa foi usada a imagem Docker `amazonlinux:2023` para em seguida o container ser criado, ao qual continha as bibliotecas numpy(por obrigação) e pandas. Além disso, dentro da AWS, foi criado uma função lambda e uma layer(camada) chamada PandasLayer, ao qual empcatou bibliotecas e outras dependências do arquivo chamado "minha-camada-pandas.zip".
+![Evidência 1 - AWS Lambda](./Exercicios/data-e-analytics/imagens-execucao/lambda-building-container.png)
+![Evidência 2 - AWS Lambda](./Exercicios/data-e-analytics/imagens-execucao/lambda-copy-container.png)
+![Evidência 3 - AWS Lambda](./Exercicios/data-e-analytics/imagens-execucao/lambda-create-layer.png)
+![Evidência 4 - AWS Lambda](./Exercicios/data-e-analytics/imagens-execucao/lambda-success-execution.png)
+</details>
+
+<details><summary>Limpeza de Recursos</summary>
+
+Nesta etapa foi realizada a exclusão dos arquivos contidos no bucket e o bucket em si, como o recomendado.
+![Evidência 5 - AWS Lambda](./Exercicios/data-e-analytics/imagens-execucao/lambda-clear-bucket.png)
+![Evidência 6 - AWS Lambda](./Exercicios/data-e-analytics/imagens-execucao/lambda-delete-bucket.png)
+</details>
+
+</details><br>
+
 # 🎯 Desafio da Sprint
 O desenvolvimento do desafio da sprint e seus respectivos arquivos relacionados encontram-se em sua pasta, assim como seu README que fora usado para dissertar sobre os passos executados e resultados.
 O Readme do Desafio foi dividido em etapas, seguindo a lógica proposta pela Compass e tais quais apresentam e explicam as resoluções utilizadas e os resultados obtidos:
-- 📁[Pasta do Desafio](../Sprint%205/Desafio/)
-- 📝[README do Desafio](../Sprint%205/Desafio/README.md)
+- 📁[Pasta do Desafio](../Sprint%206/Desafio/)
+- 📝[README do Desafio](../Sprint%206/Desafio/README.md)
     
 # ✅ Certificados
 
