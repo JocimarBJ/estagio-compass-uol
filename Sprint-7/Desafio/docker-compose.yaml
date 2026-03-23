@@ -1,0 +1,7 @@
+services:
+  etapa1:
+    build: ./etapa-1
+    env_file:
+      - .env
+    image: etapa1-csv-uploads3
+    container_name: desafio-etapa1
