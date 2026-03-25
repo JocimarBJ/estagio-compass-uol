@@ -11,9 +11,13 @@
 
 
 ## 🧠 Competências aplicadas
-- e
-- e
-- e
+- Processamento de dados com PySpark
+- Manipulação de dados com DataFrames e RDDs
+- Integração com APIs (TMDB)
+- Execução de aplicações em ambiente distribuído
+- Uso de Docker para ambiente de dados
+- Fundamentos de Big Data
+- Conceitos de Analytics na AWS
 
 ## 🔶 Curso: Pyspark | Fundamentos Análise AWS | Athena | Análise Serverless
 ### Formação Spark com Pyspark: o Curso Completo
@@ -496,3 +500,101 @@ O Apache Spark atinge alto desempenho para dados em batch e streaming, usando um
 - Processamento quase em tempo real. Se necessitar de insights imediatos.
 - Machine Learning. Ele possui biblioteca MLib, enquanto o hadoop precisa que um terceiro forneça. O MLib tem algoritmos prontos que são executados na memória.
 - Juntando conjunto de dados.
+
+# ✍ Exercícios
+
+1. <details><summary><a href="./Exercicios/contador-de-palavras/">Exercício 1 - Contador de Palavras</a></summary>
+
+    Neste exercício, foi solicitado para criarmos um arquivo dockerfile, na qual faria a cópia do arquivo README direto para dentro do container. Nos logs do container criado, aparece um link no terminal, que leva direto ao Jupyter Lab, ao qual devemos entrar em um executor do Python3, rodando assim o script que faria a contagem de palavras do README.
+    O principal responsável por isso é o Pyspark.  
+    Além disso, para facilitar a documentação e organização do código
+    ```dockerfile
+    FROM jupyter/all-spark-notebook
+
+    WORKDIR /home/jovyan
+
+    COPY 'Sprint-7/README.md' /home/jovyan/README.md
+    ```
+    Execução do Dockerfile:
+    ```bash
+    # Montar a imagem
+    docker build -f Sprint-7/Exercicios/contador-de-palavras/Dockerfile -t contar_palavras .
+
+    # -f é o caminho do Dockerfile
+    # -t é o nome da imagem
+    # . é a raiz do projeto
+
+    # Rodar o container baseado na imagem do jupyter/all-spark-notebook
+    docker run -p 8888:8888 -it contar_palavras
+
+    # Clique na linha no terminal que diz:
+    http://127.0.0.1:8888/lab?token=...
+
+    # Crie um Terminal ou um arquivo .ipynb no Jupyter Lab    
+    ```
+    
+    Script Python:
+    ```py
+    from pyspark.sql import SparkSession
+    spark = SparkSession                        \
+                .builder                        \
+                .appName("ContadorPalavras")    \
+                .getOrCreate()
+    textFile = spark.sparkContext.textFile("README.md")
+    words = textFile.flatMap(lambda line: line.split())
+    counts = words.map(lambda word: (word,1)).reduceByKey(lambda a, b: a + b)
+    result = counts.collect()
+    print(result)
+    ```
+</details>
+
+2. <details><summary><a href="./Exercicios/tmdb/">Exercício 2 - Conexão à API do TMDB</a></summary>
+
+    Neste exercício foi apenas solicitado que fizéssemos a conta no TMDB e testássemos a conexão com a API do TMDB utilizando um script pré-pronto.
+
+    ```py
+    import requests
+    import pandas as pd
+    from IPython.display import display
+
+    api_key = "36211654b2fd075c9f34f5f7b7827f9e"
+
+    url = f"https://api.themoviedb.org/3/movie/top_rated?api_key={api_key}&amp;language=pt-BR"
+
+    response = requests.get(url)
+    data = response.json()
+    filmes = []
+
+    for movie in data['results']:
+        df = {
+            'Titulo': movie['title'],
+            'Data de lançamento': movie['release_date'],
+            'Visão geral': movie['overview'],
+            'Votos': movie['vote_count'],
+            'Média de votos': movie['vote_average']
+            }
+        
+        filmes.append(df)
+
+    df = pd.DataFrame(filmes)
+    display(df)
+    ```
+</details>
+
+# 👁‍🗨 Evidências
+Como os exercícios foram bem simples, não achei necessário registrar apenas o terminal executado.
+
+# 🎯 Desafio da Sprint
+O desenvolvimento do desafio da sprint e seus respectivos arquivos relacionados encontram-se em sua pasta, assim como seu README que fora usado para dissertar sobre os passos executados e resultados.
+O Readme do Desafio foi dividido em etapas, seguindo a lógica proposta pela Compass e tais quais apresentam e explicam as resoluções utilizadas e os resultados obtidos:
+- 📁[Pasta do Desafio](../Sprint-7/Desafio/)
+- 📝[README do Desafio](../Sprint-7/Desafio/README.md)
+    
+# ✅ Certificados
+
+### AWS
+[Certificado: Fundamentals of Analytics](./Certificados/aws%20Fundamentals%20of%20Analytics%20on%20AWS%20-%20Part%201.pdf)
+
+[Certificado: Amazon Athena](./Certificados/aws%20introduction%20to%20amazon%20athena.pdf)
+
+[Certificado: Serverless Analytics](./Certificados/aws%20serverless%20analytics.pdf)
