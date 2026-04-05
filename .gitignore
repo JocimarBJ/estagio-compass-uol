@@ -1,3 +1,7 @@
 .env
 movies.csv
 series.csv
+nomes.csv
+.devcontainer
+Sprint-8/Exercicios/exercicio3-laboratorioAWS/Dockerfile
+execucao-spark-local/
