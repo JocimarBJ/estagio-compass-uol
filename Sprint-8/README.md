@@ -10,8 +10,20 @@
 
 
 ## 🧠 Competências aplicadas
-- e
-- e
+- Manipulação e processamento de dados com PySpark (DataFrames, SQL, transformações)
+- Construção de pipelines ETL no AWS Glue
+- Integração e análise de dados em Data Lake (Amazon S3)
+- Uso de AWS Glue Data Catalog e Crawler para catalogação de dados
+- Escrita e otimização de consultas com SQL (Athena/Spark SQL)
+- Tratamento e geração de grandes volumes de dados (data generation)
+- Particionamento de dados para performance em pipelines
+- Conversão e padronização de tipos de dados
+- Automação parcial de pipelines de dados no AWS Glue
+- Execução e gerenciamento de jobs de dados no AWS Glue
+- Construção de uma Trusted Zone
+- Uso de serviços serverless para analytics
+- Processamento distribuído com Apache Spark
+- Integração entre serviços AWS (S3, Glue, Athena)
 
 ## 🔶 Curso: Pyspark | Fundamentos Análise AWS | Glue
 ### AWS Skill Builder - Fundamentals of Analytics on AWS – Part 2
