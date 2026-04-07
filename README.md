@@ -47,4 +47,6 @@ Tenho 20 anos, nasci em São José do Rio Preto/SP, mas atualmente moro e estudo
 - [x] [Sprint 4](./Sprint%204/README.md)
 - [x] [Sprint 5](./Sprint%205/README.md)
 - [x] [Sprint 6](./Sprint%206/README.md)
-- [x] [Sprint 7](./Sprint%207/README.md)
+- [x] [Sprint 7](./Sprint-7/README.md)
+- [x] [Sprint 8](./Sprint-8/README.md)
+- [x] [Sprint 9](./Sprint-9/README.md)
