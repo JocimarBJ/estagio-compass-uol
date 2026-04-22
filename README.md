@@ -12,7 +12,7 @@ O [Scholarship](https://compass.uol/en/about-us/academy/) da [Compass UOL](https
 ### Sobre Mim
 Tenho 20 anos, nasci em São José do Rio Preto/SP, mas atualmente moro e estudo em Cornélio Procópio/Paraná.
    
-| <img src="https://github.com/user-attachments/assets/63039653-5a6b-4b1a-a3f5-2c49bcb2dff0" width="300" height="450"/> |
+| <img src="https://github.com/user-attachments/assets/63039653-5a6b-4b1a-a3f5-2c49bcb2dff0" width="330" height="450"/> |
 |:---------------------------------------------:|
 
 
